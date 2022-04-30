@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ImageButton.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.override_view</a> &gt; <span class="el_source">ImageButton.java</span></div><h1>ImageButton.java</h1><pre class="source lang-java linenums">package com.brioal.override_view;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+/**
+ * Created by null on 15-11-9.
+ */
+public class ImageButton extends JButton {
+<span class="nc" id="L14">    ImageIcon icon = new ImageIcon(&quot;drawable/buttonback.jpg&quot;);</span>
+<span class="nc" id="L15">    private String state = &quot;normal&quot;;</span>
+<span class="nc" id="L16">    private String content = null;</span>
+
+<span class="nc" id="L18">    public ImageButton(String s) {</span>
+<span class="nc" id="L19">        content = s;</span>
+<span class="nc" id="L20">        setMargin(new Insets(0,0,0,0));//设置边距</span>
+<span class="nc" id="L21">        setContentAreaFilled(false);//不绘制按钮区域</span>
+<span class="nc" id="L22">        setBorderPainted(false);//不绘制边框</span>
+<span class="nc" id="L23">        addMouseListener(new MouseAdapter() {</span>
+            @Override
+            public void mousePressed(MouseEvent e) {
+<span class="nc" id="L26">                state = &quot;pressed&quot;;</span>
+<span class="nc" id="L27">                repaint();</span>
+<span class="nc" id="L28">            }</span>
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+<span class="nc" id="L32">                state = &quot;normal&quot;;</span>
+<span class="nc" id="L33">                repaint();</span>
+<span class="nc" id="L34">            }</span>
+        });
+<span class="nc" id="L36">    }</span>
+
+    @Override
+    public void paint(Graphics g) {
+<span class="nc" id="L40">        super.paint(g);</span>
+<span class="nc" id="L41">        g.drawString(content,20, 20);</span>
+<span class="nc" id="L42">    }</span>
+
+    @Override
+    protected void paintBorder(Graphics g) {
+
+<span class="nc bnc" id="L47" title="All 2 branches missed.">        if (state == &quot;normal&quot;) {</span>
+//            Graphics2D g2d = (Graphics2D) g;
+//            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+//                    RenderingHints.VALUE_ANTIALIAS_ON);
+//            g2d.setColor(Color.WHITE);
+//            g2d.setStroke(new BasicStroke(3));
+<span class="nc" id="L53">            g.drawImage(icon.getImage(), 1,1,getWidth(),getHeight(), null);</span>
+//            g2d.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 20, 20);
+        } else {
+<span class="nc" id="L56">            Graphics2D g2d = (Graphics2D) g;</span>
+<span class="nc" id="L57">            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,</span>
+                    RenderingHints.VALUE_ANTIALIAS_ON);
+<span class="nc" id="L59">            g2d.setColor(Color.WHITE);</span>
+<span class="nc" id="L60">            g2d.setColor(new Color(79, 196, 122));</span>
+<span class="nc" id="L61">            g2d.setStroke(new BasicStroke(3));</span>
+<span class="nc" id="L62">            g2d.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 20, 20);</span>
+
+        }
+
+
+<span class="nc" id="L67">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

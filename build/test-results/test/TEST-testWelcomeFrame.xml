@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testWelcomeFrame" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-04-30T02:38:25" hostname="Catalyssst.local" time="3.746">
+  <properties/>
+  <testcase name="testFrameStart()" classname="testWelcomeFrame" time="2.355"/>
+  <testcase name="testButtonSelected()" classname="testWelcomeFrame" time="1.387"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

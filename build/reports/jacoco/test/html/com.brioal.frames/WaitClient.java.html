@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WaitClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.frames</a> &gt; <span class="el_source">WaitClient.java</span></div><h1>WaitClient.java</h1><pre class="source lang-java linenums">package com.brioal.frames;
+
+import com.brioal.interfaces.DiyViews;
+import com.brioal.override_view.ImageButton;
+import com.brioal.override_view.BlankPanel;
+import com.brioal.panels.BoradPanel;
+import com.brioal.panels.PlayerPanel;
+import com.sun.awt.AWTUtilities;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+/**
+ * Created by null on 15-11-9.
+ * ���ڷ������ȴ����ӵ�ʱ��Ĵ���
+ * ����Ҫ�������������붯̬Ч��
+ */
+public class WaitClient extends JFrame implements DiyViews, ActionListener {
+<span class="nc" id="L22">    private int Frame_Width = 550;</span>
+<span class="nc" id="L23">    private int Frame_Height = 550;</span>
+    private JLabel label_back, label_host, label_port, label_showMessahe;
+    private int port;
+<span class="nc" id="L26">    ImageIcon icon = new ImageIcon(&quot;drawable/loading.png&quot;);</span>
+    private JButton btnStartLocal, btnCancle;
+<span class="nc" id="L28">    boolean isConnectionted = false;</span>
+    private int state_color; // ���ڴ�ŷ�������Ҫѡ�õ�������ɫ
+    private BlankPanel blankPanel;
+<span class="nc" id="L31">    int mx = 0, my = 0, jfx = 0, jfy = 0;</span>
+
+<span class="nc" id="L33">    public WaitClient(int port, int state_color) {</span>
+<span class="nc" id="L34">        this.port = port;</span>
+<span class="nc" id="L35">        this.state_color = state_color;</span>
+<span class="nc" id="L36">        new Thread() {</span>
+            @Override
+            public void run() {
+<span class="nc" id="L39">                BoradPanel panel = new BoradPanel(null, port, BoradFrame.STATE_SERVICE, state_color);</span>
+<span class="nc" id="L40">                BoradFrame frame = new BoradFrame(panel,BoradFrame.STATE_SERVICE, state_color);</span>
+<span class="nc" id="L41">                frame.setTitle(&quot;Server&quot;);</span>
+<span class="nc" id="L42">                System.out.println(&quot;�˴��ڿͻ�������֮��Źر�&quot;);</span>
+<span class="nc" id="L43">                isConnectionted = true; //�����ж�label�Ĳ���ˢ��</span>
+<span class="nc" id="L44">                WaitClient.this.dispose(); // �пͻ�������֮��رյ�ǰ����</span>
+<span class="nc" id="L45">            }</span>
+<span class="nc" id="L46">        }.start();</span>
+<span class="nc" id="L47">        initViews();</span>
+<span class="nc" id="L48">        setViews();</span>
+<span class="nc" id="L49">        addViews();this.addMouseMotionListener(new MouseMotionAdapter() {</span>
+            @Override
+            public void mouseDragged(MouseEvent e) {
+<span class="nc" id="L52">                setLocation(e.getXOnScreen() - mx + jfx, e.getYOnScreen() - my + jfy);</span>
+<span class="nc" id="L53">            }</span>
+        });
+<span class="nc" id="L55">        this.addMouseListener(new MouseAdapter() {</span>
+            @Override
+            public void mousePressed(MouseEvent e) {
+<span class="nc" id="L58">                mx = e.getXOnScreen();</span>
+<span class="nc" id="L59">                my = e.getYOnScreen();</span>
+<span class="nc" id="L60">                jfx = getX();</span>
+<span class="nc" id="L61">                jfy = getY();</span>
+<span class="nc" id="L62">            }</span>
+        });
+<span class="nc" id="L64">    }</span>
+
+    @Override
+    public void initViews() {
+<span class="nc" id="L68">        Font f = new Font(&quot;��Բ&quot;, Font.PLAIN, 15);</span>
+
+<span class="nc" id="L70">        UIManager.put(&quot;Label.font&quot;, f);</span>
+<span class="nc" id="L71">        UIManager.put(&quot;Label.foreground&quot;, Color.WHITE);</span>
+<span class="nc" id="L72">        UIManager.put(&quot;Button.font&quot;, f);</span>
+<span class="nc" id="L73">        UIManager.put(&quot;Menu.font&quot;, f);</span>
+<span class="nc" id="L74">        UIManager.put(&quot;MenuItem.font&quot;, f);</span>
+<span class="nc" id="L75">        UIManager.put(&quot;List.font&quot;, f);</span>
+<span class="nc" id="L76">        UIManager.put(&quot;CheckBox.font&quot;, f);</span>
+<span class="nc" id="L77">        UIManager.put(&quot;RadioButton.font&quot;, f);</span>
+<span class="nc" id="L78">        UIManager.put(&quot;ComboBox.font&quot;, f);</span>
+<span class="nc" id="L79">        UIManager.put(&quot;TextArea.font&quot;, f);</span>
+<span class="nc" id="L80">        UIManager.put(&quot;EditorPane.font&quot;, f);</span>
+<span class="nc" id="L81">        UIManager.put(&quot;ScrollPane.font&quot;, f);</span>
+<span class="nc" id="L82">        UIManager.put(&quot;ToolTip.font&quot;, f);</span>
+<span class="nc" id="L83">        UIManager.put(&quot;TextField.font&quot;, f);</span>
+<span class="nc" id="L84">        UIManager.put(&quot;TableHeader.font&quot;, f);</span>
+<span class="nc" id="L85">        UIManager.put(&quot;Table.font&quot;, f);</span>
+        //���Ʊ���
+<span class="nc" id="L87">        label_back = new JLabel() {</span>
+            @Override
+            public void paint(Graphics g) {
+<span class="nc" id="L90">                super.paint(g);</span>
+<span class="nc" id="L91">                icon.paintIcon(this, g, 0, 0);</span>
+<span class="nc" id="L92">            }</span>
+        };
+        //JLable
+
+<span class="nc" id="L96">        String ip = null;</span>
+
+        try {
+<span class="nc" id="L99">            ip = InetAddress.getLocalHost().getHostAddress() ;</span>
+<span class="nc" id="L100">        } catch (UnknownHostException e) {</span>
+<span class="nc" id="L101">            e.printStackTrace();</span>
+<span class="nc" id="L102">        }</span>
+<span class="nc" id="L103">        int  port = WelcomeFrame.port;</span>
+<span class="nc" id="L104">        label_host = new JLabel(&quot;IP&quot; + ip);</span>
+<span class="nc" id="L105">        label_showMessahe = new JLabel(&quot;    Wait Connection .&quot;);</span>
+<span class="nc" id="L106">        label_port = new JLabel(&quot;Port number&quot; + port);</span>
+        //JButton
+<span class="nc" id="L108">        btnStartLocal = new ImageButton(&quot;Start game&quot;);</span>
+<span class="nc" id="L109">        btnCancle = new ImageButton(&quot;Return&quot;);</span>
+        //JPanel
+<span class="nc" id="L111">        blankPanel = new BlankPanel(130);</span>
+
+
+<span class="nc" id="L114">    }</span>
+
+    @Override
+    public void setViews() {
+
+        //Jlabel
+<span class="nc" id="L120">        label_showMessahe.setBounds(120, 250, 200, 50);</span>
+<span class="nc" id="L121">        label_host.setBounds(120, 130, 235, 45);</span>
+<span class="nc" id="L122">        label_port.setBounds(120, 180, 235, 45);</span>
+        //JButton
+<span class="nc" id="L124">        btnStartLocal.setBounds(135, 310, 192, 35);</span>
+<span class="nc" id="L125">        btnStartLocal.addActionListener(this);</span>
+
+<span class="nc" id="L127">        btnCancle.setBounds(190, 360, 80, 30);</span>
+<span class="nc" id="L128">        btnCancle.addActionListener(this);</span>
+
+        //JPanel
+<span class="nc" id="L131">        blankPanel.setBounds(110, 110, 200, 200);</span>
+
+        //JFrame
+<span class="nc" id="L134">        setUndecorated(true); // ��װ��</span>
+<span class="nc" id="L135">        setSize(Frame_Width, Frame_Height); // ���ô��ڴ�С</span>
+<span class="nc" id="L136">        AWTUtilities.setWindowOpaque(this, false);</span>
+<span class="nc" id="L137">        setLocationRelativeTo(null);  //���ô��ھ���</span>
+<span class="nc" id="L138">        setVisible(true);</span>
+<span class="nc" id="L139">    }</span>
+
+    @Override
+    public void addViews() {
+
+<span class="nc" id="L144">        this.add(label_host);</span>
+<span class="nc" id="L145">        this.add(label_port);</span>
+<span class="nc" id="L146">        this.add(btnCancle);</span>
+<span class="nc" id="L147">        this.add(btnStartLocal);</span>
+<span class="nc" id="L148">        this.add(label_showMessahe);</span>
+//        this.add(blankPanel);
+<span class="nc" id="L150">        this.add(label_back); // �������������</span>
+<span class="nc" id="L151">        String[] mesages = new String[]{</span>
+                &quot;    Waiting .&quot;,
+                &quot;    Waiting ...&quot;,
+                &quot;    Waiting ....&quot;,
+                &quot;    Waiting ....&quot;,
+                &quot;    Waiting .....&quot;,
+                &quot;    Waiting .......&quot;,
+        };
+<span class="nc" id="L159">        new Thread() {</span>
+            @Override
+            public void run() {
+<span class="nc" id="L162">                int h = 0;</span>
+<span class="nc bnc" id="L163" title="All 2 branches missed.">                while (isConnectionted == false) {</span>
+<span class="nc" id="L164">                    label_showMessahe.setText(mesages[h]);</span>
+<span class="nc" id="L165">                    repaint();</span>
+<span class="nc" id="L166">                    h++;</span>
+<span class="nc" id="L167">                    h = h % mesages.length;</span>
+                    try {
+<span class="nc" id="L169">                        Thread.sleep(400);</span>
+<span class="nc" id="L170">                    } catch (InterruptedException e) {</span>
+<span class="nc" id="L171">                        e.printStackTrace();</span>
+<span class="nc" id="L172">                    }</span>
+                }
+<span class="nc" id="L174">            }</span>
+<span class="nc" id="L175">        }.start();</span>
+<span class="nc" id="L176">    }</span>
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L180">        PlayerPanel playerPanel = null;</span>
+<span class="nc bnc" id="L181" title="All 2 branches missed.">        if (state_color == BoradFrame.STATE_BLACK) { // �����������ѡ�����</span>
+<span class="nc" id="L182">            playerPanel = new PlayerPanel(WelcomeFrame.host, port, BoradFrame.STATE_WHITE);</span>
+        } else {
+<span class="nc" id="L184">            playerPanel = new PlayerPanel(WelcomeFrame.host, port, BoradFrame.STATE_BLACK);</span>
+
+        }
+
+<span class="nc" id="L188">        BoradFrame frame = new BoradFrame(playerPanel,BoradFrame.STATE_CLIENT, state_color);</span>
+<span class="nc" id="L189">        frame.setTitle(&quot;Client&quot;);</span>
+<span class="nc" id="L190">        this.dispose();</span>
+<span class="nc" id="L191">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L194">        WaitClient client = new WaitClient(0, 0);</span>
+
+<span class="nc" id="L196">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

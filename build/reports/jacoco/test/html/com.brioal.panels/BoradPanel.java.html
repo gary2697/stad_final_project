@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoradPanel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.panels</a> &gt; <span class="el_source">BoradPanel.java</span></div><h1>BoradPanel.java</h1><pre class="source lang-java linenums">package com.brioal.panels;
+
+import com.brioal.frames.BoradFrame;
+import com.brioal.frames.WelcomeFrame;
+import com.brioal.interfaces.DiyViews;
+import com.brioal.override_view.BlankPanel;
+import com.brioal.override_view.ImageButton;
+import com.brioal.socket.Client;
+import com.brioal.socket.Server;
+import com.brioal.utool.Calculate;
+import com.brioal.utool.Point;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+/**
+ * Created by null on 15-11-6
+ * ����Service����Client��Get������������ӣ����ڴ���Service����Client�����ʱ��Ҫ����BoradPanel����
+ * �������ӵ��õ���Service����Client��Put����
+ */
+public class BoradPanel extends JPanel implements DiyViews, ActionListener {
+    private java.util.List&lt;Point&gt; points;  //���ڴ�������д��ڵĵ�
+<span class="nc" id="L26">    private Server server = null; // Service����</span>
+<span class="nc" id="L27">    private Client client = null; // Client����</span>
+    Calculate calculate;
+    private int state_start; //����������ʽ
+    private int state_color; // �������õ�������ɫ
+    private BlankPanel beginpanel; // ��ʼ����ʾ���
+    private JLabel label_messagge; // ��ʼ����ʾ��Ϣ
+    private JButton btnBegin;
+<span class="nc" id="L34">    private int flag = 1;</span>
+
+    //��������� ip�����ͻ���ʹ�ã�  �˿ںţ���ʹ�ã� ������ʽ�������ͻ��˻�ȡ�������ˣ�  ������ɫ�����ӻ���ӣ�
+<span class="nc" id="L37">    public BoradPanel(String host, int port, int state_start, int state_color) {</span>
+<span class="nc" id="L38">        this.state_start = state_start;</span>
+<span class="nc" id="L39">        this.state_color = state_color;</span>
+<span class="nc" id="L40">        points = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L41">        initViews();</span>
+<span class="nc" id="L42">        setViews();</span>
+<span class="nc" id="L43">        addViews();</span>
+        try {
+<span class="nc" id="L45">            Thread.sleep(1000);</span>
+<span class="nc" id="L46">        } catch (InterruptedException e) {</span>
+<span class="nc" id="L47">            e.printStackTrace();</span>
+<span class="nc" id="L48">        }</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        if (state_start == BoradFrame.STATE_SERVICE) {  //������Է�������ʽ������</span>
+<span class="nc" id="L50">            System.out.println(&quot;�Է�������ʽ������&quot;);</span>
+<span class="nc" id="L51">            calculate = new Calculate(state_color);</span>
+<span class="nc" id="L52">            server = new Server(port, BoradPanel.this, state_color);    //����SocketService</span>
+<span class="nc" id="L53">            new Thread() {</span>
+                @Override
+                public void run() {
+<span class="nc" id="L56">                    server.Get(); // �ڿͻ�������֮ǰ����������Ҫ������������������</span>
+<span class="nc" id="L57">                }</span>
+<span class="nc" id="L58">            }.start();</span>
+        } else {
+<span class="nc" id="L60">            System.out.println(&quot;�Կͻ�����ʽ������&quot;);</span>
+<span class="nc" id="L61">            calculate = new Calculate(state_color);</span>
+<span class="nc" id="L62">            client = new Client(host, WelcomeFrame.port, this, state_color);</span>
+<span class="nc" id="L63">            new Thread() {</span>
+                @Override
+                public void run() {
+<span class="nc" id="L66">                    client.Get();</span>
+<span class="nc" id="L67">                }</span>
+<span class="nc" id="L68">            }.start();</span>
+        }
+
+<span class="nc" id="L71">    }</span>
+
+    //ֻ��Ӷ��������ó���һ�������ڵ�һ����ӵ� ֻ�е����ӵ�ʱ��ŵ���
+    public void JustAdd() {
+<span class="nc" id="L75">        calculate.addPoint(new Point(10, 10, state_color));</span>
+<span class="nc" id="L76">        System.out.println(&quot;��һ��&quot;);</span>
+<span class="nc" id="L77">        server.Put(&quot;10,10&quot;);</span>
+        Point point; // //��������һ�������ݷ������Լ�ѡ����ɫ������
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        if (state_color == BoradFrame.STATE_BLACK) {</span>
+<span class="nc" id="L80">            point = new Point(10, 10, Point.STATE_BLACK);</span>
+        } else {
+<span class="nc" id="L82">            point = new Point(10, 10, Point.STATE_WHITE);</span>
+        }
+<span class="nc" id="L84">        points.add(point);</span>
+<span class="nc" id="L85">    }</span>
+
+    //����������ӵ����� // ��Ҫ�ж���ѡ��ɫ
+    public void addPoint(Point point) {
+<span class="nc" id="L89">        System.out.println(&quot;�������&quot;+point.getX()+&quot;----&quot;+point.getY());</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        if (flag == 1) {</span>
+<span class="nc" id="L91">            this.remove(beginpanel);</span>
+<span class="nc" id="L92">            updateUI();</span>
+<span class="nc" id="L93">            flag++;</span>
+        }
+<span class="nc bnc" id="L95" title="All 2 branches missed.">        if (calculate.JudegeWin(point)) {</span>
+<span class="nc" id="L96">            calculate.addPoint(point);</span>
+<span class="nc" id="L97">            points.add(point);  // ������ӵ�list��</span>
+<span class="nc" id="L98">            updateUI();</span>
+
+<span class="nc" id="L100">            Point result = calculate.getNext();</span>
+
+<span class="nc" id="L102">            result.setState(state_color);</span>
+<span class="nc" id="L103">            calculate.addPoint(result);</span>
+<span class="nc" id="L104">            points.add(result);  // ������ӵ�list��</span>
+<span class="nc" id="L105">            updateUI();</span>
+<span class="nc" id="L106">            System.out.println(&quot;����&quot; + result.getX() + &quot;---&quot; + result.getY());</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">            if (server != null) {</span>
+<span class="nc" id="L108">                server.Put(result.getX() + &quot;,&quot; + result.getY());</span>
+            } else {
+<span class="nc" id="L110">                client.Put(result.getX() + &quot;,&quot; + result.getY());</span>
+            }
+
+
+<span class="nc" id="L114">        } else {</span>
+<span class="nc" id="L115">            System.out.println(&quot;��Ϸ����&quot;);</span>
+<span class="nc" id="L116">            System.exit(0);</span>
+        }
+
+
+
+
+
+//        if (result != null) {
+
+//            if (state_color == BoradFrame.STATE_BLACK) {
+//                result.setState(Point.STATE_BLACK);
+//            } else {
+//                result.setState(Point.STATE_WHITE);
+//            }
+
+//        } else {
+//            System.out.println(&quot;��Ϸ����&quot;);
+//            System.exit(0);
+<span class="nc" id="L134">        }</span>
+
+
+
+    @Override
+    public void initViews() {
+<span class="nc" id="L140">        Font f = new Font(&quot;��Բ&quot;, Font.PLAIN, 15);</span>
+<span class="nc" id="L141">        Font f_label = new Font(&quot;��Բ&quot;, Font.PLAIN, 17);</span>
+<span class="nc" id="L142">        UIManager.put(&quot;Label.font&quot;, f);</span>
+<span class="nc" id="L143">        UIManager.put(&quot;Label.foreground&quot;, Color.black);</span>
+<span class="nc" id="L144">        UIManager.put(&quot;Button.font&quot;, f);</span>
+<span class="nc" id="L145">        UIManager.put(&quot;Menu.font&quot;, f);</span>
+<span class="nc" id="L146">        UIManager.put(&quot;MenuItem.font&quot;, f);</span>
+<span class="nc" id="L147">        UIManager.put(&quot;List.font&quot;, f);</span>
+<span class="nc" id="L148">        UIManager.put(&quot;CheckBox.font&quot;, f);</span>
+<span class="nc" id="L149">        UIManager.put(&quot;RadioButton.font&quot;, f);</span>
+<span class="nc" id="L150">        UIManager.put(&quot;ComboBox.font&quot;, f);</span>
+<span class="nc" id="L151">        UIManager.put(&quot;TextArea.font&quot;, f);</span>
+<span class="nc" id="L152">        UIManager.put(&quot;EditorPane.font&quot;, f);</span>
+<span class="nc" id="L153">        UIManager.put(&quot;ScrollPane.font&quot;, f);</span>
+<span class="nc" id="L154">        UIManager.put(&quot;ToolTip.font&quot;, f);</span>
+<span class="nc" id="L155">        UIManager.put(&quot;TextField.font&quot;, f);</span>
+<span class="nc" id="L156">        UIManager.put(&quot;TableHeader.font&quot;, f);</span>
+<span class="nc" id="L157">        UIManager.put(&quot;Table.font&quot;, f);</span>
+        //JPanel
+<span class="nc" id="L159">        beginpanel = new BlankPanel(200);</span>
+
+        //JLabel
+<span class="nc" id="L162">        label_messagge = new JLabel();</span>
+
+        //JButton
+<span class="nc" id="L165">        btnBegin = new ImageButton(&quot;ȷ��&quot;);</span>
+
+<span class="nc" id="L167">    }</span>
+
+    // �������
+    @Override
+    public void setViews() {
+<span class="nc" id="L172">        beginpanel.setBounds(250, 250, 240, 240);</span>
+<span class="nc" id="L173">        beginpanel.setLayout(null);</span>
+
+<span class="nc" id="L175">        label_messagge.setBounds(10, 100, 220, 40);</span>
+        //Jbutton
+<span class="nc" id="L177">        btnBegin.setBounds(80, 180, 80, 40);</span>
+<span class="nc" id="L178">        btnBegin.addActionListener(this);</span>
+<span class="nc" id="L179">    }</span>
+
+    //������
+    @Override
+    public void addViews() {
+<span class="nc bnc" id="L184" title="All 2 branches missed.">        if (state_color == BoradFrame.STATE_BLACK) {</span>
+<span class="nc" id="L185">            label_messagge.setText(&quot;�ֵ�������!\n���ȷ����ʼ��Ϸ&quot;);</span>
+        } else {
+<span class="nc" id="L187">            label_messagge.setText(&quot;��ȶԷ�����&quot;);</span>
+        }
+
+<span class="nc" id="L190">        beginpanel.add(label_messagge);</span>
+<span class="nc bnc" id="L191" title="All 2 branches missed.">        if (state_start == BoradFrame.STATE_SERVICE) {</span>
+<span class="nc" id="L192">            beginpanel.add(btnBegin);</span>
+        }
+<span class="nc" id="L194">        this.add(beginpanel);</span>
+<span class="nc" id="L195">        setLayout(null); // ���ò���Ϊ��</span>
+<span class="nc" id="L196">    }</span>
+
+    //�����Ʒ���
+    @Override
+    protected void paintComponent(Graphics g) {
+<span class="nc" id="L201">        super.paintComponent(g);</span>
+<span class="nc" id="L202">        ImageIcon board = new ImageIcon(&quot;drawable/board.png&quot;);</span>
+<span class="nc" id="L203">        g.drawImage(board.getImage(), 0, 0, 740, 740, null);</span>
+//        ���ڲ���λ��
+//        ImageIcon icon1 = new ImageIcon(&quot;drawable/white.png&quot;);
+//        g.drawImage(icon1.getImage(), 15,  680, 36, 36, null);
+//        g.drawImage(icon1.getImage(),  (14+19*35),680-19*35,35,   35, null);
+//        g.drawImage(icon1.getImage(),  14+10*34,695-10*35,35,   35, null);
+//        g.drawImage(icon1.getImage(),  682,15,35,   35, null);
+//        g.drawImage(icon1.getImage(),  352,15,35,   35, null);
+
+        //ѭ��list�е����е㣬���ݵ����ɫ������ָ����ͬ��ͼƬ��Դ
+        try {
+<span class="nc" id="L214">            Thread.sleep(100);</span>
+<span class="nc" id="L215">        } catch (InterruptedException e) {</span>
+<span class="nc" id="L216">            e.printStackTrace();</span>
+<span class="nc" id="L217">        }</span>
+<span class="nc bnc" id="L218" title="All 2 branches missed.">        for (Point point : points) {</span>
+<span class="nc" id="L219">            ImageIcon icon = null;</span>
+<span class="nc bnc" id="L220" title="All 2 branches missed.">            if (point.getState() == Point.STATE_WHITE) {</span>
+<span class="nc" id="L221">                icon = new ImageIcon(&quot;drawable/white.png&quot;); // ָ��������Դ</span>
+            } else {
+<span class="nc" id="L223">                icon = new ImageIcon(&quot;drawable/black.png&quot;); // ָ��������Դ</span>
+            }
+            //ָ��λ�û���ָ��ͼƬ
+            //�˴������ѿ��Ǳ߽磬ʹ��point��19*19�����е����꼴��
+//            g.drawImage(icon.getImage(), point.getX() * 34 + 14, 695-point.getY() * 35 , 36, 36, null);
+<span class="nc" id="L228">            g.drawImage(icon.getImage(), point.getX() * 36 - 9, 710 - point.getY() * 36 - 5, 36, 36, null);</span>
+<span class="nc" id="L229">        }</span>
+<span class="nc" id="L230">    }</span>
+
+    //����ˢ�� ���Զ���Ĳ�ˢ��ȫ����ˢ�·�������Ȼˢ��ȫ������Ӱ���������ܣ�
+    //���ڸĽ�
+    public void refresh(Graphics graphics) {
+
+<span class="nc" id="L236">    }</span>
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+<span class="nc bnc" id="L240" title="All 2 branches missed.">        if (e.getSource() == btnBegin) {</span>
+<span class="nc" id="L241">            this.remove(beginpanel);</span>
+<span class="nc" id="L242">            updateUI();</span>
+<span class="nc" id="L243">            JustAdd();</span>
+        }
+<span class="nc" id="L245">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

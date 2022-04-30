@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BlankPanel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.override_view</a> &gt; <span class="el_source">BlankPanel.java</span></div><h1>BlankPanel.java</h1><pre class="source lang-java linenums">package com.brioal.override_view;
+
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * Created by null on 15-11-9.
+ */
+public class BlankPanel extends JPanel {
+<span class="nc" id="L10">    private int trans = 40;</span>
+<span class="nc" id="L11">    public BlankPanel(int trans) {</span>
+<span class="nc" id="L12">        this.trans = trans;</span>
+<span class="nc" id="L13">        setOpaque(false);</span>
+<span class="nc" id="L14">    }</span>
+    @Override
+    protected void paintComponent(Graphics g) {
+<span class="nc" id="L17">        Graphics2D g2d = (Graphics2D) g;// 转化为2d</span>
+        // 抗锯齿
+<span class="nc" id="L19">        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,</span>
+                RenderingHints.VALUE_ANTIALIAS_ON);
+<span class="nc" id="L21">         g2d.setColor(Color.DARK_GRAY);</span>
+<span class="nc" id="L22">            g2d.setColor(new Color(255,255,255,trans));</span>
+<span class="nc" id="L23">            g2d.setStroke(new BasicStroke(3));</span>
+<span class="nc" id="L24">            g2d.fillRoundRect(0, 0, getWidth()-1, getHeight()-1, 20, 20);</span>
+<span class="nc" id="L25">    }</span>
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

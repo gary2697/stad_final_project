@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Point.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.brioal.utool;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Created by null on 15-11-6.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#23553;&#35013;&#30340;&#26827;&#30424;&#20013;&#30340;&#28857;&#30340;&#23646;&#24615;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#21253;&#21547;&#19977;&#20010;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#22312;19*19&#26827;&#30424;&#20013;&#30340;x&#65292;y&#22352;&#26631;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#26631;&#31034;&#24049;&#26041;&#23545;&#26041;&#30340;&#26827;&#23376;&#39068;&#33394;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Point {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public static int STATE_WHITE = 1000;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public static int STATE_BLACK = 1001;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private int x ;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private int y ;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private int  state ;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    public Point() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        state = STATE_WHITE;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public Point(int x, int y, int state) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.x = x;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.y = y;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.state = state;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public Point(int x, int y) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.x = x;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.y = y;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int getX() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_33'/>
+33
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_33'>1</a>
+<span>
+1. getX : replaced int return with 0 for com/brioal/utool/Point::getX &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return x;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void setX(int x) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.x = x;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int getY() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_41'/>
+41
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_41'>1</a>
+<span>
+1. getY : replaced int return with 0 for com/brioal/utool/Point::getY &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return y;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void setY(int y) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.y = y;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int getState() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_49'/>
+49
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_49'>1</a>
+<span>
+1. getState : replaced int return with 0 for com/brioal/utool/Point::getState &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return state;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void setState(int state) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.state = state;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String toString() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_58'/>
+58
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_58'>1</a>
+<span>
+1. toString : replaced return value with &#34;&#34; for com/brioal/utool/Point::toString &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return x + &#34;:&#34; + y + &#34;:&#34; + state;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@650dee83_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@650dee83_33'>33</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_33'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getX<br/><b>Killed by : </b>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRowSameColorCheckMiddle()]</span></span> replaced int return with 0 for com/brioal/utool/Point::getX &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@650dee83_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getY<br/><b>Killed by : </b>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowBlack5()]</span></span> replaced int return with 0 for com/brioal/utool/Point::getY &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@650dee83_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_49'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getState<br/><b>Killed by : </b>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowBlack5()]</span></span> replaced int return with 0 for com/brioal/utool/Point::getState &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@650dee83_58'>58</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@650dee83_58'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> replaced return value with &#34;&#34; for com/brioal/utool/Point::toString &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>BOOLEAN_FALSE_RETURN</li>
+<li class='mutator'>BOOLEAN_TRUE_RETURN</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+<li class='mutator'>EMPTY_RETURN_VALUES</li>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>NULL_RETURN_VALUES</li>
+<li class='mutator'>PRIMITIVE_RETURN_VALS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColWhite5()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowBlack4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColBlack4()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColWhite4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaMixDiaDown5()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftdiagWhite3Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowBlack5()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowWhite4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftdiagWhite3Up()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3ColBlack4()] (29 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagBlack4Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRightDiagDiffColorRightBoderX()] (65 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaWhiteRowDown5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowWhite5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4ColBlack4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowWhite5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlack2()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowBlack4()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowBlack4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testAddPointTwoPointsDifferentColorCheckBlack()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowWhite4()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowBlack5()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3LeftDiaBlack6()] (34 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColWhite5()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColWhite5()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3LeftDiagBlackWhite2plus3()] (25 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testGetNextWhite()] (31 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia78olBlack2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowBlack2()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftdiagWhite2Down()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7Jinshou()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RLeftDiagBlack3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4LeftDiagBlack5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowBlack3()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiaBlack6Down()] (11 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RColBlack3()] (28 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagBlack5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RLeftDiagBlack3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColBlackWhite2plus3()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColWhite4()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlack2Down()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowWhite4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColBlack4Down()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowBlack5()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testAddPointOutOfBoundPoint()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowWhite3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6LeftDiagBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowbBlackWhite2plus3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColWhite5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiaBlack6()] (35 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagWhite4Up()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaWhiteRowDown4()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagBlack2Down()] (16 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6ColBlack4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testAddPointAddBlackTwice()] (67 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3ColBlackWhite2plus3()] (29 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColWhite2Down()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRightDiagDiffColor()] (11 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColBlackWhite2plus3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRightDiagDiffColorRightBoderY()] (30 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6LeftDiaBlack6()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testAddPointWhitePoint()] (25 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColWhite3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4LeftDiagBlack4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiaBlack6Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagBlack2()] (18 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColWhite3Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColWhite4()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaFull()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagBlackWhite2plus3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColWhite4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftdiagWhite2()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowWhite3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4ColWhite5()] (13 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3LeftDiagBlack5()] (29 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagWhite5()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowBlack4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowBlack2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRowSameColorCheckRightMost()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RColBlack3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowBlack4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftdiagWhite2Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRowSameColorCheckLeftMost()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RLeftDiagBlack3()] (11 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RColBlack3Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowBlack3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RLeftDiagBlack3()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RLeftDiagBlack3()] (27 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RLeftDiagBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveLeftDiagSameColorCheckRightMost()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColBlack6Down()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowBlack3()] (26 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagWhite4Down()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRightDiagSameColorCheckMiddle()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6LeftDiagBlack4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9Jinshou()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftdiagWhite3Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4LeftdiagWhite2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColBlack6Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaWhiteRowDown3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4ColWhite4()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3ColBlack6()] (49 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColBlack4Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowWhite5()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagBlack2Up()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftdiagWhite3Down()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowbBlackWhite2plus3()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowbBlackWhite2plus3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRightDiagDiffColorRightBorder()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagBlack5()] (14 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColBlack5()] (69 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColBlack4Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveLeftDiagSameColorCheckLeftMost()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiaBlack6Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowWhite4()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColWhite4()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColWhite3Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColBlack6()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColWhite5Down()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColWhite5Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagBlack4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRLeftDiagBlack3Up()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRColBlack3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftdiagWhite3Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3LeftDiagWhite5()] (87 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColBlack2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6LeftdiagWhite2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4LeftDiagWhite5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColWhite3()] (11 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColWhite5Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9olBlack2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10Jinshou()] (62 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4LeftDiagBlackWhite2plus3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagWhite4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4ColBlack6()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColWhite5()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagBlack5Down()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowBlack1()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5LeftDiagBlack4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3ColWhite5()] (31 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowBlack2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RLeftDiagBlack3Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColBlackWhite2plus3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftdiagWhite3()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5LeftdiagWhite3()] (11 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRLeftDiagBlack3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowWhite1()] (24 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowWhite1()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowBlack2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowbBlackWhite2plus3()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8Jinshou()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowWhite5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6ColBlack2()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagBlackWhite2plus3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4LeftdiagWhite3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColWhite5()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColWhite2Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaWhiteRowDown2()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColWhite4Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4ColWhite3()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveColSameColorCheckRightMost()] (17 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagBlackWhite2plus3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagBlackWhite2plus3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiaBlack6()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowWhite4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowBlack4()] (23 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColBlack4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagBlack4()] (18 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagBlack2Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4ColBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3ColBlack5()] (28 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagBlack2Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowWhite5()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowWhite5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6ColBlackWhite2plus3()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagWhite5Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5LeftDiaBlack6()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagWhite5Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowbBlackWhite2plus3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4LeftDiagWhite4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagWhite5Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftdiagWhite2Down()] (16 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRowSameColorCheckMiddle()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3ColWhite4()] (29 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowWhite2()] (26 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagBlack2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowBlack1()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveColDiffColor()] (15 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveColSameColorCheckMiddle()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testAddPointAddWhiteTwice()] (14 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowWhite1()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5LeftDiagBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6LeftDiagBlackWhite2plus3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowBlack2()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRLeftDiagBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColWhite2Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColWhite4Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaWhiteRowDown1()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColBlack5Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5LeftdiagWhite2()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5LeftDiagBlackWhite2plus3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColBlackWhite2plus3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlack4Down()] (11 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowBlack1()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowbBlackWhite2plus3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagWhite4Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6LeftDiagBlack2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowWhite2()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlack6()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6LeftDiagWhite4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftdiagWhite2()] (14 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RColBlack3Down()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagWhite4Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagWhite4()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColBlack2Down()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowWhite3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RColBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10olBlack2()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4LeftDiagBlack2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftdiagWhite3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowbBlackWhite2plus3()] (26 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RColBlack3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagBlack4Down()] (15 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColWhite2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowWhite3()] (25 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaJinshou()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5LeftDiagBlack2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagWhite4()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftdiagWhite3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4ColWhite2()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColWhite2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveLeftDiagSameColorCheckMiddle()] (19 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftdiagWhite2Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColBlack5Down()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagWhite5Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagBlack2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3LeftDiagBlack2()] (31 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3LeftDiagWhite4()] (25 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3ColWhite3()] (28 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColBlack5Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColBlack6()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColWhite3Down()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6ColBlack6()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftdiagWhite2Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiaBlack6()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColBlack5Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowWhite2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowBlack1()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowWhite2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaBlackWhite2plus3Down()] (19 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagBlack4Up()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaolBlack2()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowBlack1()] (28 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColWhite4Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftdiagWhite2Up()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowWhite1()] (77 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RLeftDiagBlack3Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5LeftDiagWhite4()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowWhite1()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColBlackWhite2plus3Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColBlack2Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RColBlack3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColWhite4Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowWhite2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowWhite3()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinOutOfBoundPoint()] (17 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColBlack6()] (36 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowWhite3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColBlack6()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagWhite5()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RColBlack3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagWhite5Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColBlack6()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColWhite2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColBlack2Down()] (42 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColWhite3Down()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3LeftdiagWhite3()] (24 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColBlack6Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowWhite4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6ColWhite2()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowWhite4()] (26 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3ColWhite2()] (26 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagWhite5()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColWhite3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagWhite4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagBlack2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RColBlack3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RColBlack3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveColSameColorCheckLeftMost()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagWhite4()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowBlack5()] (11 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowWhite3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagBlack2Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveLeftDiagDiffColor()] (11 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowBlack1()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagBlack2Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagBlack5Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowWhite2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5LeftDiagWhite5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowWhite2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5ColBlackWhite2plus3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagBlack2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowWhite1()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6LeftdiagWhite3()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RLeftDiagBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowBlack2()] (29 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RLeftDiagBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RLeftDiagBlack3()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6ColWhite3()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowBlack4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3LeftdiagWhite2()] (49 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagBlackWhite2plus3()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3RowWhite5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowWhite4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiaBlack6Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiaBlack6()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagWhite4Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlackWhite2plus3Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColWhite4Down()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaMixRowDown5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testGetNextBlack()] (36 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowBlack1()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowWhite3()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColWhite2Down()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowBlack5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4ColBlack2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagBlack4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlackWhite2plus3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRightDiagSameColorCheckLeftMost()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColBlack4()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlack4()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRColBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftdiagWhite3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColBlack5()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColWhite2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColWhite3()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaBlackRowDown3()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6ColBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10LeftDiagBlackWhite2plus3()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftdiagWhite3()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagBlack4Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowBlack4()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagBlackWhite2plus3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColWhite3()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagBlackWhite2plus3Up()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagBlackWhite2plus3Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4RowWhite5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRightDiagSameColorCheckRightMost()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowWhite4()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColWhite2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4LeftDiaBlack6()] (11 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagBlack5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftdiagWhite3()] (13 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagBlack4Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowBlack1()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3ColBlack2()] (29 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlack5Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RColBlack3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagBlack4Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowWhite2()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColWhite2Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6LeftDiagWhite5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowWhite1()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia3LeftDiagBlack4()] (27 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagBlack5Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowBlack3()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowWhite1()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RColBlack3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColWhite3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowBlack1()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftdiagWhite2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlack6Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia5RowWhite5()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColBlack4()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaRowBlack2()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia4ColBlackWhite2plus3()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagWhite5()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowBlack4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6ColWhite4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftdiagWhite2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColWhite5Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagBlackWhite2plus3()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaColBlack6Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10olBlackWhite2plus3Down()] (12 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaBlackRowDown4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10ColWhite2()] (9 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagBlackWhite2plus3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColBlack4()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RLeftDiagBlack3Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9ColBlack2Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowbBlackWhite2plus3()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftDiagBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColBlack5()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8LeftdiagWhite2()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColBlack5()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColWhite3Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagBlack5Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaMixColDown5()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiaBlack5Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia89olBlackWhite2plus3Down()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9LeftDiagBlack4()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowBlack5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColWhite4()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6RowWhite3()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowbBlackWhite2plus3()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7ColWhite5Down()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia9RowBlack2()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjiaLeftDiagBlack4()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia6ColWhite5()] (5 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7RowWhite2()] (40 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testJudgeWinFiveRowDiffColor()] (10 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia10RowBlack2()] (58 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8ColBlack4Down()] (4 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testAddPointBlackPoint()] (7 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowBlack3()] (8 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia7LeftDiagWhite4Down()] (6 ms)</li><li>tests.CalculatePitTest.[engine:junit-jupiter]/[class:tests.CalculatePitTest]/[method:testPingjia8RowWhite1()] (8 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.5.2
+
+</body>
+</html>

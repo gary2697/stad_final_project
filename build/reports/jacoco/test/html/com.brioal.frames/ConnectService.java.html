@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConnectService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.frames</a> &gt; <span class="el_source">ConnectService.java</span></div><h1>ConnectService.java</h1><pre class="source lang-java linenums">package com.brioal.frames;
+
+import com.brioal.interfaces.DiyViews;
+import com.brioal.override_view.ImageButton;
+import com.brioal.override_view.BlankPanel;
+import com.brioal.panels.BoradPanel;
+import com.brioal.socket.Client;
+import com.sun.awt.AWTUtilities;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+/**
+ * Created by null on 15-11-14.
+ */
+public class ConnectService extends JFrame implements DiyViews, ActionListener {
+    private JLabel label_background, label_host, label_port;
+    private JTextField text_host , text_port ;
+    private JButton btnStart ,btnCancle;
+<span class="nc" id="L21">    private ImageIcon icon = new ImageIcon(&quot;drawable/loading.png&quot;);</span>
+<span class="nc" id="L22">    int mx = 0, my = 0, jfx = 0, jfy = 0;</span>
+<span class="nc" id="L23">    private BlankPanel blankPanel = null;</span>
+    private int state_color ; // ���ʹ�õ����ӵ���ɫ
+<span class="nc" id="L25">    private int width = 550 ;</span>
+<span class="nc" id="L26">    private int height = 550;</span>
+
+
+    //���췽��
+<span class="nc" id="L30">    public ConnectService(int state_color) {</span>
+<span class="nc" id="L31">        this.state_color = state_color;</span>
+<span class="nc" id="L32">        initViews();</span>
+<span class="nc" id="L33">        setViews();</span>
+<span class="nc" id="L34">        addViews();</span>
+<span class="nc" id="L35">        this.addMouseMotionListener(new MouseMotionAdapter() {</span>
+            @Override
+            public void mouseDragged(MouseEvent e) {
+<span class="nc" id="L38">                setLocation(e.getXOnScreen() - mx + jfx, e.getYOnScreen() - my + jfy);</span>
+<span class="nc" id="L39">            }</span>
+        });
+<span class="nc" id="L41">        this.addMouseListener(new MouseAdapter() {</span>
+            @Override
+            public void mousePressed(MouseEvent e) {
+<span class="nc" id="L44">                mx = e.getXOnScreen();</span>
+<span class="nc" id="L45">                my = e.getYOnScreen();</span>
+<span class="nc" id="L46">                jfx = getX();</span>
+<span class="nc" id="L47">                jfy = getY();</span>
+<span class="nc" id="L48">            }</span>
+        });
+<span class="nc" id="L50">    }</span>
+
+    @Override
+    public void initViews() {
+<span class="nc" id="L54">        Font f = new Font(&quot;��Բ&quot;, Font.PLAIN, 15);</span>
+<span class="nc" id="L55">        UIManager.put(&quot;Label.font&quot;, f);</span>
+<span class="nc" id="L56">        UIManager.put(&quot;Label.foreground&quot;, Color.WHITE);</span>
+<span class="nc" id="L57">        UIManager.put(&quot;Button.font&quot;, f);</span>
+<span class="nc" id="L58">        UIManager.put(&quot;Menu.font&quot;, f);</span>
+<span class="nc" id="L59">        UIManager.put(&quot;MenuItem.font&quot;, f);</span>
+<span class="nc" id="L60">        UIManager.put(&quot;List.font&quot;, f);</span>
+<span class="nc" id="L61">        UIManager.put(&quot;CheckBox.font&quot;, f);</span>
+<span class="nc" id="L62">        UIManager.put(&quot;RadioButton.font&quot;, f);</span>
+<span class="nc" id="L63">        UIManager.put(&quot;ComboBox.font&quot;, f);</span>
+<span class="nc" id="L64">        UIManager.put(&quot;TextArea.font&quot;, f);</span>
+<span class="nc" id="L65">        UIManager.put(&quot;EditorPane.font&quot;, f);</span>
+<span class="nc" id="L66">        UIManager.put(&quot;ScrollPane.font&quot;, f);</span>
+<span class="nc" id="L67">        UIManager.put(&quot;ToolTip.font&quot;, f);</span>
+<span class="nc" id="L68">        UIManager.put(&quot;TextField.font&quot;, f);</span>
+<span class="nc" id="L69">        UIManager.put(&quot;TableHeader.font&quot;, f);</span>
+<span class="nc" id="L70">        UIManager.put(&quot;Table.font&quot;, f);</span>
+        //���Ʊ���
+<span class="nc" id="L72">        label_background = new JLabel() {</span>
+            @Override
+            public void paint(Graphics g) {
+<span class="nc" id="L75">                super.paint(g);</span>
+<span class="nc" id="L76">                icon.paintIcon(this, g, 0, 0);</span>
+<span class="nc" id="L77">            }</span>
+
+        };
+        //JLabel
+<span class="nc" id="L81">        blankPanel = new BlankPanel(180);</span>
+<span class="nc" id="L82">        label_host = new JLabel(&quot;IP��&quot;);</span>
+<span class="nc" id="L83">        label_port = new JLabel(&quot;PORT��&quot;);</span>
+        //JTextFiled
+<span class="nc" id="L85">        text_host = new JTextField(WelcomeFrame.host);</span>
+<span class="nc" id="L86">        text_port = new JTextField(WelcomeFrame.port+&quot;&quot;);</span>
+
+        //JButton
+<span class="nc" id="L89">        btnStart = new ImageButton(&quot;Start&quot;);</span>
+<span class="nc" id="L90">        btnCancle = new ImageButton(&quot;Cancel&quot;);</span>
+<span class="nc" id="L91">    }</span>
+
+    @Override
+    public void setViews() {
+<span class="nc" id="L95">        setUndecorated(true);</span>
+//        blankPanel.setBounds(10, 10, 280, 180);
+        //jlABEL
+<span class="nc" id="L98">        label_host.setBounds(140, 130, 80, 45);</span>
+<span class="nc" id="L99">        label_port.setBounds(140, 180, 80, 45);</span>
+
+        //JTextFiled
+<span class="nc" id="L102">        text_host.setBounds(230, 130, 100, 35);</span>
+<span class="nc" id="L103">        text_port.setBounds(230, 180, 100, 35);</span>
+
+        //JButton
+<span class="nc" id="L106">        btnStart.setBounds(120, 300, 100, 35);</span>
+<span class="nc" id="L107">        btnStart.addActionListener(this);</span>
+<span class="nc" id="L108">        btnCancle.setBounds(230,300,100,35);</span>
+<span class="nc" id="L109">        btnCancle.addActionListener(this);</span>
+<span class="nc" id="L110">    }</span>
+
+    @Override
+    public void addViews() {
+        //JLable
+<span class="nc" id="L115">        add(label_host);</span>
+<span class="nc" id="L116">        add(label_port);</span>
+        //JTextFiled
+<span class="nc" id="L118">        add(text_host);</span>
+<span class="nc" id="L119">        add(text_port);</span>
+        //JButton
+<span class="nc" id="L121">        add(btnStart);</span>
+<span class="nc" id="L122">        add(btnCancle);</span>
+//        this.add(blankPanel);
+<span class="nc" id="L124">        this.add(label_background);</span>
+<span class="nc" id="L125">        setUndecorated(true); // ��װ��</span>
+<span class="nc" id="L126">        setSize(width, height); // ���ô��ڴ�С</span>
+<span class="nc" id="L127">        AWTUtilities.setWindowOpaque(this, false);</span>
+<span class="nc" id="L128">        setLocationRelativeTo(null);  //���ô��ھ���</span>
+<span class="nc" id="L129">        setVisible(true);</span>
+<span class="nc" id="L130">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L133">        ConnectService connectService = new ConnectService(0);</span>
+<span class="nc" id="L134">    }</span>
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+<span class="nc bnc" id="L138" title="All 2 branches missed.">        if (e.getSource() == btnStart) {</span>
+<span class="nc" id="L139">            String host = WelcomeFrame.host;</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">            if (Client.TestConnection(host, WelcomeFrame.port)) {</span>
+
+<span class="nc bnc" id="L142" title="All 2 branches missed.">                if (state_color == BoradFrame.STATE_BLACK) {</span>
+<span class="nc" id="L143">                    new Thread() {</span>
+                        @Override
+                        public void run() {
+<span class="nc" id="L146">                            BoradPanel panel = new BoradPanel(host, WelcomeFrame.port, BoradFrame.STATE_CLIENT, BoradFrame.STATE_BLACK);</span>
+<span class="nc" id="L147">                            BoradFrame frame = new BoradFrame(panel,BoradFrame.STATE_SERVICE,state_color);</span>
+<span class="nc" id="L148">                            frame.setTitle(&quot;client&quot;);</span>
+<span class="nc" id="L149">                        }</span>
+<span class="nc" id="L150">                    }.start();</span>
+                } else {
+                    //�ͻ���ѡ�����
+<span class="nc" id="L153">                    new Thread() {</span>
+                        @Override
+                        public void run() {
+<span class="nc" id="L156">                            BoradPanel panel = new BoradPanel(host, WelcomeFrame.port, BoradFrame.STATE_CLIENT, BoradFrame.STATE_WHITE);</span>
+<span class="nc" id="L157">                            BoradFrame frame = new BoradFrame(panel,BoradFrame.STATE_CLIENT,state_color);</span>
+<span class="nc" id="L158">                            frame.setTitle(&quot;�ͻ���&quot;);</span>
+<span class="nc" id="L159">                        }</span>
+<span class="nc" id="L160">                    }.start();</span>
+                }
+            } else {
+<span class="nc" id="L163">                ConnectedError frame = new ConnectedError();</span>
+            }
+        }
+
+<span class="nc bnc" id="L167" title="All 2 branches missed.">        if (e.getSource() == btnCancle) {</span>
+<span class="nc" id="L168">            WelcomeFrame welcomeFrame = new WelcomeFrame();</span>
+<span class="nc" id="L169">            ConnectService.this.dispose();</span>
+
+        }
+
+<span class="nc" id="L173">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

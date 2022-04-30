@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlayerPanel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.panels</a> &gt; <span class="el_source">PlayerPanel.java</span></div><h1>PlayerPanel.java</h1><pre class="source lang-java linenums">package com.brioal.panels;
+
+import com.brioal.frames.BoradFrame;
+import com.brioal.interfaces.DiyViews;
+import com.brioal.socket.Client;
+import com.brioal.socket.PlayerClient;
+import com.brioal.utool.Point;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.geom.Arc2D;
+import java.util.ArrayList;
+
+/**
+ * Created by null on 15-11-13.
+ * ������ҽ��в�����Pane
+ */
+
+public class PlayerPanel extends JPanel implements DiyViews, MouseListener {
+<span class="nc" id="L22">    private PlayerClient client = null; // Client����</span>
+    private java.util.List&lt;com.brioal.utool.Point&gt; points;
+<span class="nc" id="L24">    private int[][] datas = new int[20][20];</span>
+    private int state_color  ;
+
+<span class="nc" id="L27">    public PlayerPanel(String host, int port,  int state_color) {</span>
+<span class="nc" id="L28">        this.state_color = state_color;</span>
+<span class="nc" id="L29">        points = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L30">        initViews();</span>
+<span class="nc" id="L31">        setViews();</span>
+<span class="nc" id="L32">        addViews();</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">        for (int i = 0; i &lt; datas.length; i++) {</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">            for (int j = 0; j &lt; datas[0].length; j++) {</span>
+<span class="nc" id="L35">                datas[i][j] = 0;</span>
+            }
+        }
+        try {
+<span class="nc" id="L39">            Thread.sleep(1000);</span>
+<span class="nc" id="L40">        } catch (InterruptedException e) {</span>
+<span class="nc" id="L41">            e.printStackTrace();</span>
+<span class="nc" id="L42">        }</span>
+<span class="nc" id="L43">        System.out.println(&quot;�Կͻ�����ʽ������&quot;);</span>
+<span class="nc" id="L44">        client = new PlayerClient(host, port, PlayerPanel.this, state_color);  // ����Client����</span>
+<span class="nc" id="L45">        new Thread() {</span>
+            @Override
+            public void run() {
+<span class="nc" id="L48">                client.Get();</span>
+<span class="nc" id="L49">            } // �������У�����ȡ����</span>
+<span class="nc" id="L50">        }.start();</span>
+
+<span class="nc" id="L52">    }</span>
+
+    //����������ӵ�����
+    public void addPoint(Point point) {
+<span class="nc bnc" id="L56" title="All 2 branches missed.">        if (datas[point.getX()][point.getY()] == 0) {</span>
+<span class="nc" id="L57">            points.add(point);  // ������ӵ�list��</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">            if (state_color == BoradFrame.STATE_BLACK) {</span>
+<span class="nc" id="L59">                datas[point.getX()][point.getY()] = 1;</span>
+            } else {
+<span class="nc" id="L61">                datas[point.getX()][point.getY()] = -1;</span>
+            }
+<span class="nc" id="L63">            updateUI();</span>
+<span class="nc" id="L64">            client.Put(point.getX() + &quot;,&quot; + point.getY());</span>
+        }
+
+<span class="nc" id="L67">    }</span>
+
+    public void receivePoint(Point point) {
+<span class="nc" id="L70">        points.add(point);  // ������ӵ�list��</span>
+<span class="nc" id="L71">        updateUI();</span>
+<span class="nc" id="L72">    }</span>
+
+    @Override
+    public void initViews() {
+
+<span class="nc" id="L77">    }</span>
+
+    @Override
+    public void setViews() {
+<span class="nc" id="L81">        addMouseListener(this);</span>
+<span class="nc" id="L82">    }</span>
+
+    @Override
+    public void addViews() {
+
+<span class="nc" id="L87">    }</span>
+
+    //�����Ʒ���
+    @Override
+    protected void paintComponent(Graphics g) {
+<span class="nc" id="L92">        super.paintComponent(g);</span>
+<span class="nc" id="L93">        ImageIcon board = new ImageIcon(&quot;drawable/board.png&quot;);</span>
+<span class="nc" id="L94">        g.drawImage(board.getImage(), 0, 0, 740, 740, null);</span>
+////        ���ڲ���λ��
+//        ImageIcon icon1 = new ImageIcon(&quot;drawable/white.png&quot;);
+//        g.drawImage(icon1.getImage(),18 ,  18, 36, 36, null);
+//        g.drawImage(icon1.getImage(), 19 * 36 -5, 19 *36-5, 36, 36, null);
+//        g.drawImage(icon1.getImage(), 19 * 33+26 , 19 * 33+23, 36, 36, null);
+        //ѭ��list�е����е㣬���ݵ����ɫ������ָ����ͬ��ͼƬ��Դ
+        try {
+<span class="nc" id="L102">            Thread.sleep(100);</span>
+<span class="nc" id="L103">        } catch (InterruptedException e) {</span>
+<span class="nc" id="L104">            e.printStackTrace();</span>
+<span class="nc" id="L105">        }</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">        for (Point point : points) {</span>
+<span class="nc" id="L107">            ImageIcon icon = null;</span>
+<span class="nc bnc" id="L108" title="All 2 branches missed.">            if (point.getState() == com.brioal.utool.Point.STATE_WHITE) {</span>
+<span class="nc" id="L109">                icon = new ImageIcon(&quot;drawable/white.png&quot;); // ָ��������Դ</span>
+            } else {
+<span class="nc" id="L111">                icon = new ImageIcon(&quot;drawable/black.png&quot;); // ָ��������Դ</span>
+            }
+            //ָ��λ�û���ָ��ͼƬ
+            //�˴������ѿ��Ǳ߽磬ʹ��point��19*19�����е����꼴��
+<span class="nc" id="L115">            g.drawImage(icon.getImage(),point.getX()*36-9, 710-point.getY()*36-5, 36, 36, null);</span>
+<span class="nc" id="L116">        }</span>
+<span class="nc" id="L117">    }</span>
+
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+<span class="nc" id="L123">    }</span>
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+<span class="nc" id="L127">        int x = e.getX();</span>
+<span class="nc" id="L128">        int y = e.getY();</span>
+<span class="nc" id="L129">        System.out.println(x + &quot;,&quot; + y);</span>
+<span class="nc" id="L130">        Point point = null;</span>
+<span class="nc" id="L131">        int X = (x)/ 36;</span>
+<span class="nc" id="L132">        int Y = (745-y) / 36;</span>
+<span class="nc" id="L133">        System.out.println(X+&quot;:&quot;+Y);</span>
+<span class="nc bnc" id="L134" title="All 8 branches missed.">        if (X &gt; 0 &amp;&amp; X &lt; 20 &amp;&amp; Y &gt; 0 &amp;&amp; Y &lt; 20) {</span>
+<span class="nc" id="L135">            System.out.println(&quot;����&quot;+X + &quot;:&quot; + Y);</span>
+<span class="nc bnc" id="L136" title="All 2 branches missed.">            if ((state_color == BoradFrame.STATE_WHITE)) {</span>
+<span class="nc" id="L137">                point = new Point(X, Y, Point.STATE_WHITE);</span>
+            } else {
+<span class="nc" id="L139">                point = new Point(X, Y, Point.STATE_BLACK);</span>
+            }
+<span class="nc" id="L141">            points.add(point);</span>
+<span class="nc" id="L142">            addPoint(point);</span>
+        }
+
+<span class="nc" id="L145">    }</span>
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+<span class="nc" id="L150">    }</span>
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+<span class="nc" id="L155">    }</span>
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+<span class="nc" id="L160">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L163">        JFrame frame = new JFrame();</span>
+<span class="nc" id="L164">        PlayerPanel playerPanel = new PlayerPanel(null, 0, 0);</span>
+<span class="nc" id="L165">        frame.setContentPane(playerPanel);</span>
+<span class="nc" id="L166">        frame.setSize(740, 740);</span>
+<span class="nc" id="L167">        frame.setVisible(true);</span>
+<span class="nc" id="L168">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

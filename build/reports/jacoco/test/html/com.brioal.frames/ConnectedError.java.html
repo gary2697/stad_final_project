@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConnectedError.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.frames</a> &gt; <span class="el_source">ConnectedError.java</span></div><h1>ConnectedError.java</h1><pre class="source lang-java linenums">package com.brioal.frames;
+
+import com.brioal.interfaces.DiyViews;
+import com.brioal.override_view.BlankButton;
+import com.brioal.override_view.ImageButton;
+import com.brioal.override_view.BlankPanel;
+import com.sun.awt.AWTUtilities;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+/**
+ * Created by null on 15-11-14.
+ */
+public class ConnectedError extends JFrame implements DiyViews, ActionListener {
+
+    private JLabel label_background, label_message;
+    private JButton btnClose;
+<span class="nc" id="L20">    private BlankPanel blankPanel = null;</span>
+<span class="nc" id="L21">    int mx = 0, my = 0, jfx = 0, jfy = 0;</span>
+
+<span class="nc" id="L23">    public ConnectedError() {</span>
+<span class="nc" id="L24">        initViews();</span>
+<span class="nc" id="L25">        setViews();</span>
+<span class="nc" id="L26">        addViews();</span>
+
+<span class="nc" id="L28">        this.addMouseMotionListener(new MouseMotionAdapter() {</span>
+            @Override
+            public void mouseDragged(MouseEvent e) {
+<span class="nc" id="L31">                setLocation(e.getXOnScreen() - mx + jfx, e.getYOnScreen() - my + jfy);</span>
+<span class="nc" id="L32">            }</span>
+        });
+<span class="nc" id="L34">        this.addMouseListener(new MouseAdapter() {</span>
+            @Override
+            public void mousePressed(MouseEvent e) {
+<span class="nc" id="L37">                mx = e.getXOnScreen();</span>
+<span class="nc" id="L38">                my = e.getYOnScreen();</span>
+<span class="nc" id="L39">                jfx = getX();</span>
+<span class="nc" id="L40">                jfy = getY();</span>
+<span class="nc" id="L41">            }</span>
+        });
+<span class="nc" id="L43">    }</span>
+
+    @Override
+    public void initViews() {
+<span class="nc" id="L47">        Font f = new Font(&quot;��Բ&quot;, Font.PLAIN, 15);</span>
+<span class="nc" id="L48">        UIManager.put(&quot;Label.font&quot;, f);</span>
+<span class="nc" id="L49">        UIManager.put(&quot;Label.foreground&quot;, Color.black);</span>
+<span class="nc" id="L50">        UIManager.put(&quot;Button.font&quot;, f);</span>
+<span class="nc" id="L51">        UIManager.put(&quot;Menu.font&quot;, f);</span>
+<span class="nc" id="L52">        UIManager.put(&quot;MenuItem.font&quot;, f);</span>
+<span class="nc" id="L53">        UIManager.put(&quot;List.font&quot;, f);</span>
+<span class="nc" id="L54">        UIManager.put(&quot;CheckBox.font&quot;, f);</span>
+<span class="nc" id="L55">        UIManager.put(&quot;RadioButton.font&quot;, f);</span>
+<span class="nc" id="L56">        UIManager.put(&quot;ComboBox.font&quot;, f);</span>
+<span class="nc" id="L57">        UIManager.put(&quot;TextArea.font&quot;, f);</span>
+<span class="nc" id="L58">        UIManager.put(&quot;EditorPane.font&quot;, f);</span>
+<span class="nc" id="L59">        UIManager.put(&quot;ScrollPane.font&quot;, f);</span>
+<span class="nc" id="L60">        UIManager.put(&quot;ToolTip.font&quot;, f);</span>
+<span class="nc" id="L61">        UIManager.put(&quot;TextField.font&quot;, f);</span>
+<span class="nc" id="L62">        UIManager.put(&quot;TableHeader.font&quot;, f);</span>
+<span class="nc" id="L63">        UIManager.put(&quot;Table.font&quot;, f);</span>
+
+
+        //JButton
+
+<span class="nc" id="L68">        btnClose = new BlankButton(&quot;     ȷ��     &quot;);</span>
+        //JPanel
+<span class="nc" id="L70">        blankPanel = new BlankPanel(225);</span>
+
+        //JLabel
+<span class="nc" id="L73">        label_message = new JLabel(&quot;�Ҳ�������������ȷ��Ip�Ͷ˿ں���ȷ�����ԣ�&quot;);</span>
+<span class="nc" id="L74">    }</span>
+
+    @Override
+    public void setViews() {
+<span class="nc" id="L78">        label_message.setBounds(15, 40, 340, 40);</span>
+<span class="nc" id="L79">        btnClose.setBounds(100, 100, 150, 40);</span>
+<span class="nc" id="L80">        btnClose.addActionListener(this);</span>
+<span class="nc" id="L81">    }</span>
+
+    @Override
+    public void addViews() {
+<span class="nc" id="L85">        add(label_message);</span>
+<span class="nc" id="L86">        add(btnClose);</span>
+<span class="nc" id="L87">        add(blankPanel);</span>
+//        add(label_background);
+<span class="nc" id="L89">        setUndecorated(true); // ��װ��</span>
+<span class="nc" id="L90">        setSize(350, 150); // ���ô��ڴ�С</span>
+<span class="nc" id="L91">        AWTUtilities.setWindowOpaque(this, false);</span>
+<span class="nc" id="L92">        setLocationRelativeTo(null);  //���ô��ھ���</span>
+<span class="nc" id="L93">        setVisible(true);</span>
+<span class="nc" id="L94">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L97">        ConnectedError frame = new ConnectedError();</span>
+<span class="nc" id="L98">    }</span>
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+<span class="nc bnc" id="L102" title="All 2 branches missed.">        if (e.getSource() == btnClose) {</span>
+<span class="nc" id="L103">            ConnectedError.this.dispose();</span>
+
+        }
+<span class="nc" id="L106">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

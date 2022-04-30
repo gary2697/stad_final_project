@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BoradFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.frames</a> &gt; <span class="el_source">BoradFrame.java</span></div><h1>BoradFrame.java</h1><pre class="source lang-java linenums">package com.brioal.frames ;
+
+import com.brioal.interfaces.DiyViews;
+
+import javax.swing.*;
+import java.awt.event.*;
+
+public  class BoradFrame   extends JFrame implements DiyViews{
+<span class="fc" id="L9">    public static int STATE_BLACK = 1 ;</span>
+<span class="fc" id="L10">    public static int STATE_WHITE = -1 ;</span>
+<span class="fc" id="L11">    public static int STATE_SERVICE = 8 ;</span>
+<span class="fc" id="L12">    public static int STATE_CLIENT = 88 ;</span>
+    JPanel panel ;
+<span class="nc" id="L14">    int mx = 0, my = 0, jfx = 0, jfy = 0;</span>
+    private int state_state , state_color ;
+
+
+<span class="nc" id="L18">    public BoradFrame(JPanel panel,int state_state , int state_color) {</span>
+<span class="nc" id="L19">        this.state_state = state_state;</span>
+<span class="nc" id="L20">        this.state_color = state_color;</span>
+<span class="nc" id="L21">        this.panel = panel;</span>
+<span class="nc" id="L22">        initViews();</span>
+<span class="nc" id="L23">        setViews();</span>
+<span class="nc" id="L24">        addViews();</span>
+<span class="nc" id="L25">        addViews();</span>
+<span class="nc" id="L26">        this.addMouseMotionListener(new MouseMotionAdapter() {</span>
+            @Override
+            public void mouseDragged(MouseEvent e) {
+<span class="nc" id="L29">                setLocation(e.getXOnScreen() - mx + jfx, e.getYOnScreen() - my + jfy);</span>
+<span class="nc" id="L30">            }</span>
+        });
+<span class="nc" id="L32">        this.addMouseListener(new MouseAdapter() {</span>
+            @Override
+            public void mousePressed(MouseEvent e) {
+<span class="nc" id="L35">                mx = e.getXOnScreen();</span>
+<span class="nc" id="L36">                my = e.getYOnScreen();</span>
+<span class="nc" id="L37">                jfx = getX();</span>
+<span class="nc" id="L38">                jfy = getY();</span>
+<span class="nc" id="L39">            }</span>
+        });
+<span class="nc" id="L41">    }</span>
+
+    @Override
+    public void initViews() {
+<span class="nc" id="L45">    }</span>
+
+    @Override
+    public void setViews() {
+<span class="nc" id="L49">        setContentPane(panel);</span>
+//        setUndecorated(true);
+<span class="nc" id="L51">        setSize(740, 740);</span>
+<span class="nc" id="L52">        setLocationRelativeTo(null);</span>
+<span class="nc" id="L53">        setVisible(true);</span>
+<span class="nc" id="L54">    }</span>
+
+    @Override
+    public void addViews() {
+
+<span class="nc" id="L59">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

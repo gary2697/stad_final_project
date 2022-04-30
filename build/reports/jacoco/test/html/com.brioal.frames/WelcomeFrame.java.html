@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WelcomeFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.frames</a> &gt; <span class="el_source">WelcomeFrame.java</span></div><h1>WelcomeFrame.java</h1><pre class="source lang-java linenums">package com.brioal.frames;
+
+import com.brioal.interfaces.DiyViews;
+import com.brioal.override_view.ImageButton;
+import com.brioal.override_view.BlankPanel;
+import com.brioal.override_view.SelectButton;
+import com.sun.awt.AWTUtilities;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+/**
+ * Created by null on 15-11-9.
+ * 欢迎界面
+ */
+public class WelcomeFrame extends JFrame implements DiyViews, ActionListener {
+    //指定全局端口号
+<span class="nc" id="L19">    public static int port = 9528;</span>
+    //全局IP地址 。默认为本地主机IP
+<span class="nc" id="L21">    public static String host = &quot;localhost&quot;;</span>
+    private JButton btnStart , btnClose; // 启动按钮
+    private SelectButton selectService, selectClient, selectBlack, selectWhite; // 启动方式，颜色选择
+    private JLabel lable_select_state, label_select_color; // 指示选择方式，选择颜色的按钮
+    private JLabel BackLabel , label_message; //背景标签
+<span class="nc" id="L26">    private ImageIcon icon = new ImageIcon(&quot;drawable/welcome.png&quot;);</span>
+<span class="nc" id="L27">    private int select_state = BoradFrame.STATE_SERVICE; // 启动方式。 默认为服务器方式</span>
+<span class="nc" id="L28">    private int select_color = BoradFrame.STATE_BLACK; // 棋子颜色，默认为黑子</span>
+<span class="nc" id="L29">    int mx = 0, my = 0, jfx = 0, jfy = 0;</span>
+    private BlankPanel blankPanel ; // 透明面板
+<span class="nc" id="L31">    private int Frame_width = 1000 ;</span>
+<span class="nc" id="L32">    private int Frame_height = 500 ;</span>
+
+<span class="nc" id="L34">    public WelcomeFrame() {</span>
+<span class="nc" id="L35">        Font f = new Font(&quot;幼圆&quot;, Font.PLAIN, 15);</span>
+<span class="nc" id="L36">        UIManager.put(&quot;Label.font&quot;, f);</span>
+<span class="nc" id="L37">        UIManager.put(&quot;Label.foreground&quot;, Color.black);</span>
+<span class="nc" id="L38">        UIManager.put(&quot;Button.font&quot;, f);</span>
+<span class="nc" id="L39">        UIManager.put(&quot;Menu.font&quot;, f);</span>
+<span class="nc" id="L40">        UIManager.put(&quot;MenuItem.font&quot;, f);</span>
+<span class="nc" id="L41">        UIManager.put(&quot;List.font&quot;, f);</span>
+<span class="nc" id="L42">        UIManager.put(&quot;CheckBox.font&quot;, f);</span>
+<span class="nc" id="L43">        UIManager.put(&quot;RadioButton.font&quot;, f);</span>
+<span class="nc" id="L44">        UIManager.put(&quot;ComboBox.font&quot;, f);</span>
+<span class="nc" id="L45">        UIManager.put(&quot;TextArea.font&quot;, f);</span>
+<span class="nc" id="L46">        UIManager.put(&quot;EditorPane.font&quot;, f);</span>
+<span class="nc" id="L47">        UIManager.put(&quot;ScrollPane.font&quot;, f);</span>
+<span class="nc" id="L48">        UIManager.put(&quot;ToolTip.font&quot;, f);</span>
+<span class="nc" id="L49">        UIManager.put(&quot;TextField.font&quot;, f);</span>
+<span class="nc" id="L50">        UIManager.put(&quot;TableHeader.font&quot;, f);</span>
+<span class="nc" id="L51">        UIManager.put(&quot;Table.font&quot;, f);</span>
+<span class="nc" id="L52">        initViews();</span>
+<span class="nc" id="L53">        setViews();</span>
+<span class="nc" id="L54">        addViews();</span>
+<span class="nc" id="L55">        this.addMouseMotionListener(new MouseMotionAdapter() {</span>
+            @Override
+            public void mouseDragged(MouseEvent e) {
+<span class="nc" id="L58">                setLocation(e.getXOnScreen() - mx + jfx, e.getYOnScreen() - my + jfy);</span>
+<span class="nc" id="L59">            }</span>
+        });
+<span class="nc" id="L61">        this.addMouseListener(new MouseAdapter() {</span>
+            @Override
+            public void mousePressed(MouseEvent e) {
+<span class="nc" id="L64">                mx = e.getXOnScreen();</span>
+<span class="nc" id="L65">                my = e.getYOnScreen();</span>
+<span class="nc" id="L66">                jfx = getX();</span>
+<span class="nc" id="L67">                jfy = getY();</span>
+<span class="nc" id="L68">            }</span>
+        });
+<span class="nc" id="L70">    }</span>
+
+
+    @Override
+    public void initViews() {
+        //绘制背景
+<span class="nc" id="L76">        BackLabel = new JLabel() {</span>
+            @Override
+            public void paint(Graphics g) {
+<span class="nc" id="L79">                super.paint(g);</span>
+<span class="nc" id="L80">                icon.paintIcon(this, g, 0, 0);</span>
+<span class="nc" id="L81">            }</span>
+
+        };
+//        标签初始化
+<span class="nc" id="L85">        lable_select_state = new JLabel(&quot;启动方式: &quot;);</span>
+<span class="nc" id="L86">        label_select_color = new JLabel(&quot;棋子颜色：&quot;);</span>
+        //JButton
+<span class="nc" id="L88">        selectService = new SelectButton(&quot;服务器&quot;);</span>
+<span class="nc" id="L89">        selectClient = new SelectButton(&quot;客户端&quot;);</span>
+<span class="nc" id="L90">        selectBlack = new SelectButton(&quot;黑棋&quot;);</span>
+<span class="nc" id="L91">        selectWhite = new SelectButton(&quot;白棋&quot;);</span>
+<span class="nc" id="L92">        btnStart = new ImageButton(&quot;开始游戏&quot;);</span>
+
+<span class="nc" id="L94">        btnClose = new ImageButton(&quot;  关闭  &quot;);</span>
+        //JPanel
+<span class="nc" id="L96">        blankPanel = new BlankPanel(180);</span>
+<span class="nc bnc" id="L97" title="All 2 branches missed.">        if (select_state == 1) {</span>
+<span class="nc" id="L98">            selectService.setState(&quot;slectied&quot;);</span>
+<span class="nc" id="L99">            selectClient.setState(&quot;normal&quot;);</span>
+        } else {
+<span class="nc" id="L101">            selectService.setState(&quot;normal&quot;);</span>
+<span class="nc" id="L102">            selectClient.setState(&quot;slectied&quot;);</span>
+        }
+<span class="nc bnc" id="L104" title="All 2 branches missed.">        if (select_color == 1) {</span>
+<span class="nc" id="L105">            selectBlack.setState(&quot;slectied&quot;);</span>
+<span class="nc" id="L106">            selectWhite.setState(&quot;normal&quot;);</span>
+        } else {
+<span class="nc" id="L108">            selectBlack.setState(&quot;normal&quot;);</span>
+<span class="nc" id="L109">            selectWhite.setState(&quot;slectied&quot;);</span>
+        }
+<span class="nc" id="L111">    }</span>
+
+    @Override
+    public void setViews() {
+//        JLabel
+<span class="nc" id="L116">        lable_select_state.setBounds(169, 187, 100, 35);</span>
+<span class="nc" id="L117">        label_select_color.setBounds(169, 240, 100, 35);</span>
+//       JButton
+<span class="nc" id="L119">        selectService.setBounds(260, 187, 100, 35);</span>
+<span class="nc" id="L120">        selectClient.setBounds(400, 187, 100, 35);</span>
+
+<span class="nc" id="L122">        selectBlack.setBounds(260, 240, 100, 35);</span>
+<span class="nc" id="L123">        selectWhite.setBounds(400, 240, 100, 35);</span>
+<span class="nc" id="L124">        btnStart.setBounds(200, 320, 100, 35);</span>
+<span class="nc" id="L125">        btnClose.setBounds(360,320,100,35);</span>
+        //JPanle
+<span class="nc" id="L127">        blankPanel.setBounds(5, 5, Frame_width-5, Frame_height-5);</span>
+
+<span class="nc" id="L129">        selectService.addActionListener(this);</span>
+<span class="nc" id="L130">        selectClient.addActionListener(this);</span>
+<span class="nc" id="L131">        selectBlack.addActionListener(this);</span>
+<span class="nc" id="L132">        selectWhite.addActionListener(this);</span>
+<span class="nc" id="L133">        btnStart.addActionListener(this);</span>
+
+<span class="nc" id="L135">    }</span>
+
+    @Override
+    public void addViews() {
+<span class="nc" id="L139">        this.add(lable_select_state);</span>
+<span class="nc" id="L140">        this.add(label_select_color);</span>
+<span class="nc" id="L141">        this.add(selectService);</span>
+<span class="nc" id="L142">        this.add(selectClient);</span>
+<span class="nc" id="L143">        this.add(selectBlack);</span>
+<span class="nc" id="L144">        this.add(selectWhite);</span>
+<span class="nc" id="L145">        this.add(BackLabel);</span>
+<span class="nc" id="L146">        this.add(btnStart);</span>
+<span class="nc" id="L147">        this.add(btnClose);</span>
+//        this.add(blankPanel); // 使用透明面板
+<span class="nc" id="L149">        this.add(BackLabel); // 使用图像</span>
+<span class="nc" id="L150">        setUndecorated(true); // 不装饰</span>
+<span class="nc" id="L151">        setSize(Frame_width, Frame_height); // 设置窗口大小</span>
+<span class="nc" id="L152">        AWTUtilities.setWindowOpaque(this, false);</span>
+<span class="nc" id="L153">        setLocationRelativeTo(null);  //设置窗口居中</span>
+<span class="nc" id="L154">        setVisible(true);</span>
+<span class="nc" id="L155">    }</span>
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+<span class="nc bnc" id="L159" title="All 2 branches missed.">        if (e.getSource() == selectService) {</span>
+<span class="nc" id="L160">            selectClient.setState(&quot;normal&quot;);</span>
+            //选择以服务器方式
+<span class="nc" id="L162">            select_state = BoradFrame.STATE_SERVICE;</span>
+        }
+<span class="nc bnc" id="L164" title="All 2 branches missed.">        if (e.getSource() == selectClient) {</span>
+<span class="nc" id="L165">            selectService.setState(&quot;normal&quot;);</span>
+            //选择客户端方式
+<span class="nc" id="L167">            select_state = BoradFrame.STATE_CLIENT;</span>
+        }
+<span class="nc bnc" id="L169" title="All 2 branches missed.">        if (e.getSource() == selectBlack) {</span>
+            //选择白棋模式
+<span class="nc" id="L171">            selectWhite.setState(&quot;normal&quot;);</span>
+<span class="nc" id="L172">            select_color = BoradFrame.STATE_BLACK;</span>
+        }
+
+<span class="nc bnc" id="L175" title="All 2 branches missed.">        if (e.getSource() == selectWhite) {</span>
+<span class="nc" id="L176">            selectBlack.setState(&quot;normal&quot;);</span>
+            //选择黑棋模式
+<span class="nc" id="L178">            select_color = BoradFrame.STATE_WHITE;</span>
+        }
+
+<span class="nc bnc" id="L181" title="All 2 branches missed.">        if (e.getSource() == btnStart) {</span>
+
+            //启动
+<span class="nc bnc" id="L184" title="All 2 branches missed.">            if (select_state == BoradFrame.STATE_SERVICE) {</span>
+                //服务器模式
+<span class="nc" id="L186">                WaitClient frame = new WaitClient(WelcomeFrame.port, select_color);</span>
+<span class="nc" id="L187">                System.out.println(&quot;服务器模式，为黑子&quot;);</span>
+<span class="nc" id="L188">                WelcomeFrame.this.dispose();</span>
+<span class="nc" id="L189">            } else {</span>
+//                客户端模式
+                ConnectService clientFrame;
+<span class="nc bnc" id="L192" title="All 2 branches missed.">                if (select_color == BoradFrame.STATE_BLACK) {</span>
+                    //如果客户端选择黑棋
+<span class="nc" id="L194">                    clientFrame = new ConnectService(BoradFrame.STATE_BLACK);</span>
+                } else {
+<span class="nc" id="L196">                    clientFrame = new ConnectService(BoradFrame.STATE_WHITE);</span>
+                }
+
+<span class="nc" id="L199">                WelcomeFrame.this.dispose();</span>
+            }
+        }
+<span class="nc" id="L202">    }</span>
+
+    public static void main(String[] args) {
+<span class="nc" id="L205">        WelcomeFrame frame = new WelcomeFrame();</span>
+<span class="nc" id="L206">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

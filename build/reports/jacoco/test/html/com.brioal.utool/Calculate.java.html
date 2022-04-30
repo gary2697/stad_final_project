@@ -1,0 +1,2596 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Calculate.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.utool</a> &gt; <span class="el_source">Calculate.java</span></div><h1>Calculate.java</h1><pre class="source lang-java linenums">package com.brioal.utool;
+
+import com.brioal.frames.BoradFrame;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Calculate {
+    private int state_color;//1Ϊ���壬-1Ϊ���壬0Ϊ�Թ���
+<span class="fc" id="L11">    private int[][] datas = new int[20][20];</span>
+
+<span class="fc" id="L13">    public Calculate(int state_color) {</span>
+<span class="fc" id="L14">        this.state_color = state_color;</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for (int j = 0; j &lt; datas.length; j++) {</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">            for (int k = 0; k &lt; datas[0].length; k++) {</span>
+<span class="fc" id="L17">                datas[j][k] = 0;</span>
+            }
+        }
+<span class="fc" id="L20">    }</span>
+    public boolean JudegeWin(Point point) {
+<span class="fc" id="L22">        int x = point.getX();</span>
+
+<span class="fc" id="L24">        int y = point.getY();</span>
+<span class="fc" id="L25">        int i_1 = 1;</span>
+<span class="fc" id="L26">        int count_1 = 1;</span>
+<span class="fc bfc" id="L27" title="All 4 branches covered.">        while ((x+i_1&lt;20) &amp;&amp; (datas[x][y]==datas[x+i_1][y])){</span>
+<span class="fc" id="L28">            i_1++;</span>
+<span class="fc" id="L29">            count_1++;</span>
+        }
+<span class="fc" id="L31">        i_1=1;</span>
+<span class="fc bfc" id="L32" title="All 4 branches covered.">        while ((x-i_1&gt;0)&amp;&amp;(datas[x][y]== datas[x-i_1][y])){</span>
+<span class="fc" id="L33">            i_1++;</span>
+<span class="fc" id="L34">            count_1++;</span>
+        }
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (count_1 &gt;= 5) {</span>
+<span class="fc" id="L37">            return true ;</span>
+        }
+<span class="fc" id="L39">        int i_2 = 1 ;</span>
+<span class="fc" id="L40">        int  count_2 = 1 ;</span>
+<span class="fc bfc" id="L41" title="All 4 branches covered.">        while ((y - i_2 &gt; 0) &amp;&amp; (datas[x][y] == datas[x][y - i_2])) {</span>
+<span class="fc" id="L42">            i_2++;</span>
+<span class="fc" id="L43">            count_2++;</span>
+        }
+<span class="fc" id="L45">        i_2 = 1 ;</span>
+<span class="fc bfc" id="L46" title="All 4 branches covered.">        while ((y + i_2 &lt; 20) &amp;&amp; (datas[x][y] == datas[x][y + i_2])) {</span>
+<span class="fc" id="L47">            i_2++;</span>
+<span class="fc" id="L48">            count_2++;</span>
+        }
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (count_2 &gt;= 5) {</span>
+<span class="fc" id="L51">            return true;</span>
+        }
+<span class="fc" id="L53">        int i_3 = 1 ;</span>
+<span class="fc" id="L54">        int count_3 = 1 ;</span>
+<span class="fc bfc" id="L55" title="All 6 branches covered.">        while ((x - i_3 &gt; 0) &amp;&amp; (y - i_3 &gt; 0) &amp;&amp; (datas[x][y] == datas[x - i_3][y - i_3])) {</span>
+<span class="fc" id="L56">            i_3++;</span>
+<span class="fc" id="L57">            count_3++;</span>
+        }
+<span class="fc" id="L59">        i_3 = 1 ;</span>
+<span class="fc bfc" id="L60" title="All 6 branches covered.">        while ((x + i_3 &lt; 20) &amp;&amp; (y + i_3 &lt; 20) &amp;&amp; (datas[x][y] == datas[x + i_3][y + i_3])) {</span>
+<span class="fc" id="L61">            i_3++;</span>
+<span class="fc" id="L62">            count_3++;</span>
+        }
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (count_3 &gt;= 5) {</span>
+<span class="fc" id="L65">            return true;</span>
+        }
+<span class="fc" id="L67">        int i_4 = 1 ;</span>
+<span class="fc" id="L68">        int count_4 = 1 ;</span>
+<span class="fc bfc" id="L69" title="All 6 branches covered.">        while ((x + i_4 &lt; 20) &amp;&amp; (y - i_4 &gt; 0) &amp;&amp; (datas[x][y] == datas[x + i_4][y - i_4])) {</span>
+<span class="fc" id="L70">            i_4++;</span>
+<span class="fc" id="L71">            count_4++;</span>
+        }
+<span class="fc" id="L73">        i_4 = 1 ;</span>
+<span class="fc bfc" id="L74" title="All 6 branches covered.">        while ((x - i_4 &gt; 0) &amp;&amp; (y + i_4 &lt; 20) &amp;&amp; (datas[x][y] == datas[x - i_4][y + i_4])) {</span>
+<span class="fc" id="L75">            i_4++;</span>
+<span class="fc" id="L76">            count_4++;</span>
+        }
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        if (count_4 &gt;= 5) {</span>
+<span class="fc" id="L79">            return true;</span>
+        }
+
+<span class="fc" id="L82">        return false;</span>
+    }
+    public void addPoint(Point point) {
+<span class="fc" id="L85">        int x = point.getX();</span>
+<span class="fc" id="L86">        int y = point.getY();</span>
+
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (point.getState() == BoradFrame.STATE_BLACK) {</span>
+<span class="fc" id="L89">            System.out.println(&quot;black added&quot;);</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">            if (datas[x][y] == 0) {</span>
+<span class="fc" id="L91">                datas[x][y] = 1;</span>
+            }
+
+        } else {
+<span class="fc" id="L95">            System.out.println(&quot;white added&quot;);</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">            if (datas[x][y] == 0) {</span>
+<span class="fc" id="L97">                datas[x][y] = -1;</span>
+            }
+        }
+<span class="fc" id="L100">    }</span>
+    public int[][] getDatas()
+    {
+<span class="fc" id="L103">        return datas;</span>
+    }
+
+
+    public Point getNext() {
+<span class="fc" id="L108">        List&lt;Point&gt; points = new ArrayList&lt;&gt;();</span>
+//        if ((pingjia3(datas) == 0) &amp;&amp; (pingjia4(datas) == 0) &amp;&amp;
+//                (pingjia5(datas) == 0) &amp;&amp; (pingjia6(datas) == 0) &amp;&amp;
+//                (pingjia7(datas) == 0) &amp;&amp; (pingjia8(datas) == 0) &amp;&amp;
+//                (pingjia9(datas) == 0) &amp;&amp; (pingjia10(datas) == 0) &amp;&amp;
+//                (pingjia(datas) == 0)) {
+<span class="fc" id="L114">        System.out.println(pingjia3(datas));</span>
+<span class="fc" id="L115">        System.out.println(pingjia4(datas));</span>
+<span class="fc" id="L116">        System.out.println(pingjia5(datas));</span>
+<span class="fc" id="L117">        System.out.println(pingjia6(datas));</span>
+<span class="fc" id="L118">        System.out.println(pingjia7(datas));</span>
+<span class="fc" id="L119">        System.out.println(pingjia8(datas));</span>
+<span class="fc" id="L120">        System.out.println(pingjia9(datas));</span>
+<span class="fc" id="L121">        System.out.println(pingjia10(datas));</span>
+<span class="fc" id="L122">        System.out.println(pingjia(datas));</span>
+//        pingjia5(datas);
+//        pingjia6(datas);
+//        pingjia7(datas);
+//        pingjia8(datas);
+//        pingjia9(datas);
+//        pingjia10(datas);
+//        pingjia(datas);
+<span class="fc" id="L130">        int max = 0;</span>
+
+<span class="fc bfc" id="L132" title="All 2 branches covered.">        for (int i = 0; i &lt; 19; i++) {</span>
+<span class="fc bfc" id="L133" title="All 2 branches covered.">            for (int j = 0; j &lt; 19; j++) {</span>
+<span class="fc" id="L134">                System.out.print(datas[i][j] + &quot;\t&quot;);</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">                if (max &lt;= datas[i][j]) {</span>
+<span class="fc" id="L136">                    max = datas[i][j];</span>
+
+                }
+            }
+<span class="fc" id="L140">            System.out.println();</span>
+        }
+<span class="fc bfc" id="L142" title="All 2 branches covered.">        for (int i = 0; i &lt; 19; i++) {</span>
+<span class="fc bfc" id="L143" title="All 2 branches covered.">            for (int j = 0; j &lt; 19; j++) {</span>
+<span class="fc bfc" id="L144" title="All 2 branches covered.">                if (max == datas[i][j]) {</span>
+//                    System.out.println(i+&quot;....&quot;+j);
+<span class="fc" id="L146">                    points.add(new Point(i, j));</span>
+                }
+            }
+        }
+<span class="fc" id="L150">        int select = (int) (Math.random() * points.size());</span>
+<span class="fc bfc" id="L151" title="All 2 branches covered.">        for (int i = 0; i &lt; points.size(); i++) {</span>
+//            System.out.println(points.get(i).getX());
+        }
+<span class="fc" id="L154">        Point result = points.get(select);</span>
+<span class="fc bfc" id="L155" title="All 2 branches covered.">        if (state_color == BoradFrame.STATE_BLACK) {</span>
+<span class="fc" id="L156">            result.setState(Point.STATE_BLACK);</span>
+
+        } else {
+<span class="fc" id="L159">            result.setState(Point.STATE_WHITE);</span>
+
+        }
+<span class="fc" id="L162">        addPoint(result);</span>
+
+<span class="fc bfc" id="L164" title="All 2 branches covered.">        for (int i = 0; i &lt; datas.length; i++) {</span>
+<span class="fc bfc" id="L165" title="All 2 branches covered.">            for (int j = 0; j &lt; datas[0].length; j++) {</span>
+<span class="fc bfc" id="L166" title="All 4 branches covered.">                if (datas[i][j] != 1 &amp;&amp; datas[i][j] != -1) {</span>
+<span class="fc" id="L167">                    datas[i][j] = 0;</span>
+                }
+            }
+        }
+//        System.out.println(&quot;���ѡ����&quot; + result.getX() + &quot;;&quot; + result.getY());
+<span class="fc" id="L172">        return result;</span>
+    }
+
+//    else
+//
+//    {
+//        return null;
+//    }
+
+
+//    }
+
+
+    public int pingjia3(int[][] mind) {
+<span class="fc" id="L186">        int countm = 0;</span>
+<span class="fc" id="L187">        int county = 0;</span>
+<span class="fc" id="L188">        int space = 0;</span>
+
+<span class="fc bfc" id="L190" title="All 2 branches covered.">        for (int i = 15; i &lt; 20; i++)</span>
+<span class="fc bfc" id="L191" title="All 2 branches covered.">            for (int j = 1; j &lt; 5; j++) {</span>
+
+<span class="fc bfc" id="L193" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) { //same row</span>
+<span class="fc bfc" id="L194" title="All 4 branches covered.">                    if (mind[i][j + k] != state_color &amp;&amp; mind[i][j + k] != -state_color) space++; //no color</span>
+<span class="fc bfc" id="L195" title="All 2 branches covered.">                    if (mind[i][j + k] == state_color) countm++; //my color</span>
+<span class="fc bfc" id="L196" title="All 2 branches covered.">                    if (mind[i][j + k] == -state_color) county++; //my opponent color</span>
+                }
+
+
+<span class="fc bfc" id="L200" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) { // both color detected reset 0</span>
+<span class="fc" id="L201">                    mind[i][j] += 0;</span>
+<span class="fc" id="L202">                    countm = 0;</span>
+<span class="fc" id="L203">                    county = 0;</span>
+<span class="fc" id="L204">                    space = 0;</span>
+<span class="fc bfc" id="L205" title="All 2 branches covered.">                } else if (space == 5) { // new line</span>
+<span class="fc" id="L206">                    mind[i][j] += 7;</span>
+<span class="fc" id="L207">                    countm = 0;</span>
+<span class="fc" id="L208">                    county = 0;</span>
+<span class="fc" id="L209">                    space = 0;</span>
+                } else { // potential line
+<span class="fc bfc" id="L211" title="All 6 branches covered.">                    switch (countm) {</span>
+                        case 5:
+<span class="fc" id="L213">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L215">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L216">                            break;</span>
+                        case 3:
+<span class="fc" id="L218">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L219">                            break;</span>
+                        case 2:
+<span class="fc" id="L221">                            mind[i][j] += 800;</span>
+<span class="fc" id="L222">                            break;</span>
+                        case 1:
+<span class="fc" id="L224">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="fc bfc" id="L229" title="All 6 branches covered.">                    switch (county) {</span>
+                        case 5:
+<span class="fc" id="L231">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L233">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L234">                            break;</span>
+                        case 3:
+<span class="fc" id="L236">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L237">                            break;</span>
+                        case 2:
+<span class="fc" id="L239">                            mind[i][j] += 400;</span>
+<span class="fc" id="L240">                            break;</span>
+                        case 1:
+<span class="fc" id="L242">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L245">                    countm = 0;</span>
+<span class="fc" id="L246">                    county = 0;</span>
+<span class="fc" id="L247">                    space = 0;</span>
+                }
+<span class="fc" id="L249">                System.out.println(&quot;=====================&quot;);</span>
+<span class="fc bfc" id="L250" title="All 2 branches covered.">                for (int a = 0; a &lt; 20; a++){</span>
+<span class="fc bfc" id="L251" title="All 2 branches covered.">                    for (int b = 0;b&lt;20;b++)</span>
+                    {
+<span class="fc" id="L253">                        System.out.print(mind[a][b]);</span>
+<span class="fc" id="L254">                        System.out.print(&quot; &quot;);</span>
+                    }
+<span class="fc" id="L256">                    System.out.println(&quot;\n&quot;);</span>
+                }
+<span class="fc" id="L258">                System.out.println(&quot;=====================&quot;);</span>
+
+<span class="fc bfc" id="L260" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) { // same col</span>
+<span class="fc bfc" id="L261" title="All 4 branches covered.">                    if (mind[i - k][j] != state_color &amp;&amp; mind[i - k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L262" title="All 2 branches covered.">                    if (mind[i - k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L263" title="All 2 branches covered.">                    if (mind[i - k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L267" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L268">                    mind[i][j] += 0;</span>
+<span class="fc" id="L269">                    countm = 0;</span>
+<span class="fc" id="L270">                    county = 0;</span>
+<span class="fc" id="L271">                    space = 0;</span>
+<span class="fc bfc" id="L272" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L273">                    mind[i][j] += 7;</span>
+<span class="fc" id="L274">                    countm = 0;</span>
+<span class="fc" id="L275">                    county = 0;</span>
+<span class="fc" id="L276">                    space = 0;</span>
+                } else {
+<span class="pc bpc" id="L278" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L280">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L282">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L283">                            break;</span>
+                        case 3:
+<span class="fc" id="L285">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L286">                            break;</span>
+                        case 2:
+<span class="fc" id="L288">                            mind[i][j] += 800;</span>
+<span class="fc" id="L289">                            break;</span>
+                        case 1:
+<span class="fc" id="L291">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L296" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L298">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L300">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L301">                            break;</span>
+                        case 3:
+<span class="fc" id="L303">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L304">                            break;</span>
+                        case 2:
+<span class="fc" id="L306">                            mind[i][j] += 400;</span>
+<span class="fc" id="L307">                            break;</span>
+                        case 1:
+<span class="fc" id="L309">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L312">                    countm = 0;</span>
+<span class="fc" id="L313">                    county = 0;</span>
+<span class="fc" id="L314">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L316" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) { // same left top to bot right</span>
+<span class="fc bfc" id="L317" title="All 4 branches covered.">                    if (mind[i - k][j + k] != state_color &amp;&amp; mind[i - k][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L318" title="All 2 branches covered.">                    if (mind[i - k][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L319" title="All 2 branches covered.">                    if (mind[i - k][j + k] == -state_color) county++;</span>
+
+                }
+                //missing x- y-
+<span class="fc bfc" id="L323" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L324">                    mind[i][j] += 0;</span>
+<span class="fc" id="L325">                    countm = 0;</span>
+<span class="fc" id="L326">                    county = 0;</span>
+<span class="fc" id="L327">                    space = 0;</span>
+<span class="fc bfc" id="L328" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L329">                    mind[i][j] += 7;</span>
+<span class="fc" id="L330">                    countm = 0;</span>
+<span class="fc" id="L331">                    county = 0;</span>
+<span class="fc" id="L332">                    space = 0;</span>
+                } else {
+<span class="pc bpc" id="L334" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L336">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L338">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L339">                            break;</span>
+                        case 3:
+<span class="fc" id="L341">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L342">                            break;</span>
+                        case 2:
+<span class="fc" id="L344">                            mind[i][j] += 800;</span>
+<span class="fc" id="L345">                            break;</span>
+                        case 1:
+<span class="fc" id="L347">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L352" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L354">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L356">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L357">                            break;</span>
+                        case 3:
+<span class="fc" id="L359">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L360">                            break;</span>
+                        case 2:
+<span class="fc" id="L362">                            mind[i][j] += 400;</span>
+<span class="fc" id="L363">                            break;</span>
+                        case 1:
+<span class="fc" id="L365">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L368">                    countm = 0;</span>
+<span class="fc" id="L369">                    county = 0;</span>
+<span class="fc" id="L370">                    space = 0;</span>
+                }
+
+
+            }
+<span class="fc" id="L375">        return 0;</span>
+    }
+
+    public int pingjia4(int[][] mind) {
+<span class="fc" id="L379">        int countm = 0;</span>
+<span class="fc" id="L380">        int county = 0;</span>
+<span class="fc" id="L381">        int space = 0;</span>
+<span class="fc bfc" id="L382" title="All 2 branches covered.">        for (int i = 1; i &lt; 5; i++) {</span>
+<span class="fc bfc" id="L383" title="All 2 branches covered.">            for (int j = 1; j &lt; 5; j++) {</span>
+
+<span class="fc bfc" id="L385" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L386" title="All 4 branches covered.">                    if (mind[i + k][j] != state_color &amp;&amp; mind[i + k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L387" title="All 2 branches covered.">                    if (mind[i + k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L388" title="All 2 branches covered.">                    if (mind[i + k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L392" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L393">                    mind[i][j] += 0;</span>
+<span class="fc" id="L394">                    countm = 0;</span>
+<span class="fc" id="L395">                    county = 0;</span>
+<span class="fc" id="L396">                    space = 0;</span>
+<span class="fc bfc" id="L397" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L398">                    mind[i][j] += 7;</span>
+<span class="fc" id="L399">                    countm = 0;</span>
+<span class="fc" id="L400">                    county = 0;</span>
+<span class="fc" id="L401">                    space = 0;</span>
+                } else {
+<span class="fc bfc" id="L403" title="All 6 branches covered.">                    switch (countm) {</span>
+                        case 5:
+<span class="fc" id="L405">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L407">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L408">                            break;</span>
+                        case 3:
+<span class="fc" id="L410">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L411">                            break;</span>
+                        case 2:
+<span class="fc" id="L413">                            mind[i][j] += 800;</span>
+<span class="fc" id="L414">                            break;</span>
+                        case 1:
+<span class="fc" id="L416">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="fc bfc" id="L421" title="All 6 branches covered.">                    switch (county) {</span>
+                        case 5:
+<span class="fc" id="L423">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L425">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L426">                            break;</span>
+                        case 3:
+<span class="fc" id="L428">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L429">                            break;</span>
+                        case 2:
+<span class="fc" id="L431">                            mind[i][j] += 400;</span>
+<span class="fc" id="L432">                            break;</span>
+                        case 1:
+<span class="fc" id="L434">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L437">                    countm = 0;</span>
+<span class="fc" id="L438">                    county = 0;</span>
+<span class="fc" id="L439">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L441" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L442" title="All 4 branches covered.">                    if (mind[i][j + k] != state_color &amp;&amp; mind[i][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L443" title="All 2 branches covered.">                    if (mind[i][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L444" title="All 2 branches covered.">                    if (mind[i][j + k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L448" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L449">                    mind[i][j] += 0;</span>
+<span class="fc" id="L450">                    countm = 0;</span>
+<span class="fc" id="L451">                    county = 0;</span>
+<span class="fc" id="L452">                    space = 0;</span>
+<span class="fc bfc" id="L453" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L454">                    mind[i][j] += 7;</span>
+<span class="fc" id="L455">                    countm = 0;</span>
+<span class="fc" id="L456">                    county = 0;</span>
+<span class="fc" id="L457">                    space = 0;</span>
+                } else {
+<span class="pc bpc" id="L459" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L461">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L463">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L464">                            break;</span>
+                        case 3:
+<span class="fc" id="L466">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L467">                            break;</span>
+                        case 2:
+<span class="fc" id="L469">                            mind[i][j] += 800;</span>
+<span class="fc" id="L470">                            break;</span>
+                        case 1:
+<span class="fc" id="L472">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L477" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L479">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L481">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L482">                            break;</span>
+                        case 3:
+<span class="fc" id="L484">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L485">                            break;</span>
+                        case 2:
+<span class="fc" id="L487">                            mind[i][j] += 400;</span>
+<span class="fc" id="L488">                            break;</span>
+                        case 1:
+<span class="fc" id="L490">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L493">                    countm = 0;</span>
+<span class="fc" id="L494">                    county = 0;</span>
+<span class="fc" id="L495">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L497" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L498" title="All 4 branches covered.">                    if (mind[i + k][j + k] != state_color &amp;&amp; mind[i + k][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L499" title="All 2 branches covered.">                    if (mind[i + k][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L500" title="All 2 branches covered.">                    if (mind[i + k][j + k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L504" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L505">                    mind[i][j] += 0;</span>
+<span class="fc" id="L506">                    countm = 0;</span>
+<span class="fc" id="L507">                    county = 0;</span>
+<span class="fc" id="L508">                    space = 0;</span>
+<span class="fc bfc" id="L509" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L510">                    mind[i][j] += 7;</span>
+<span class="fc" id="L511">                    countm = 0;</span>
+<span class="fc" id="L512">                    county = 0;</span>
+<span class="fc" id="L513">                    space = 0;</span>
+                } else {
+<span class="pc bpc" id="L515" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L517">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L519">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L520">                            break;</span>
+                        case 3:
+<span class="fc" id="L522">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L523">                            break;</span>
+                        case 2:
+<span class="fc" id="L525">                            mind[i][j] += 800;</span>
+<span class="fc" id="L526">                            break;</span>
+                        case 1:
+<span class="fc" id="L528">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L533" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L535">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L537">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L538">                            break;</span>
+                        case 3:
+<span class="fc" id="L540">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L541">                            break;</span>
+                        case 2:
+<span class="fc" id="L543">                            mind[i][j] += 400;</span>
+<span class="fc" id="L544">                            break;</span>
+                        case 1:
+<span class="fc" id="L546">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L549">                    countm = 0;</span>
+<span class="fc" id="L550">                    county = 0;</span>
+<span class="fc" id="L551">                    space = 0;</span>
+                }
+
+            }
+        }
+<span class="fc" id="L556">        return 0;</span>
+    }
+
+    public int pingjia5(int[][] mind) {
+<span class="fc" id="L560">        int countm = 0;</span>
+<span class="fc" id="L561">        int county = 0;</span>
+<span class="fc" id="L562">        int space = 0;</span>
+<span class="fc bfc" id="L563" title="All 2 branches covered.">        for (int i = 15; i &lt; 20; i++) {</span>
+<span class="fc bfc" id="L564" title="All 2 branches covered.">            for (int j = 15; j &lt; 20; j++) {</span>
+<span class="fc bfc" id="L565" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L566" title="All 4 branches covered.">                    if (mind[i][j - k] != state_color &amp;&amp; mind[i][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L567" title="All 2 branches covered.">                    if (mind[i][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L568" title="All 2 branches covered.">                    if (mind[i][j - k] == -state_color) county++;</span>
+
+                }
+<span class="fc bfc" id="L571" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L572">                    mind[i][j] += 0;</span>
+<span class="fc" id="L573">                    countm = 0;</span>
+<span class="fc" id="L574">                    county = 0;</span>
+<span class="fc" id="L575">                    space = 0;</span>
+<span class="fc bfc" id="L576" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L577">                    mind[i][j] += 7;</span>
+<span class="fc" id="L578">                    countm = 0;</span>
+<span class="fc" id="L579">                    county = 0;</span>
+<span class="fc" id="L580">                    space = 0;</span>
+                } else {
+<span class="fc bfc" id="L582" title="All 6 branches covered.">                    switch (countm) {</span>
+                        case 5:
+<span class="fc" id="L584">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L586">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L587">                            break;</span>
+                        case 3:
+<span class="fc" id="L589">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L590">                            break;</span>
+                        case 2:
+<span class="fc" id="L592">                            mind[i][j] += 800;</span>
+<span class="fc" id="L593">                            break;</span>
+                        case 1:
+<span class="fc" id="L595">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="fc bfc" id="L600" title="All 6 branches covered.">                    switch (county) {</span>
+                        case 5:
+<span class="fc" id="L602">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L604">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L605">                            break;</span>
+                        case 3:
+<span class="fc" id="L607">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L608">                            break;</span>
+                        case 2:
+<span class="fc" id="L610">                            mind[i][j] += 400;</span>
+<span class="fc" id="L611">                            break;</span>
+                        case 1:
+<span class="fc" id="L613">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L616">                    countm = 0;</span>
+<span class="fc" id="L617">                    county = 0;</span>
+<span class="fc" id="L618">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L620" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L621" title="All 4 branches covered.">                    if (mind[i - k][j] != state_color &amp;&amp; mind[i - k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L622" title="All 2 branches covered.">                    if (mind[i - k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L623" title="All 2 branches covered.">                    if (mind[i - k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L627" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L628">                    mind[i][j] += 0;</span>
+<span class="fc" id="L629">                    countm = 0;</span>
+<span class="fc" id="L630">                    county = 0;</span>
+<span class="fc" id="L631">                    space = 0;</span>
+<span class="fc bfc" id="L632" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L633">                    mind[i][j] += 7;</span>
+<span class="fc" id="L634">                    countm = 0;</span>
+<span class="fc" id="L635">                    county = 0;</span>
+<span class="fc" id="L636">                    space = 0;</span>
+                } else {
+<span class="pc bpc" id="L638" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L640">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L642">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L643">                            break;</span>
+                        case 3:
+<span class="fc" id="L645">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L646">                            break;</span>
+                        case 2:
+<span class="fc" id="L648">                            mind[i][j] += 800;</span>
+<span class="fc" id="L649">                            break;</span>
+                        case 1:
+<span class="fc" id="L651">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L656" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L658">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L660">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L661">                            break;</span>
+                        case 3:
+<span class="fc" id="L663">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L664">                            break;</span>
+                        case 2:
+<span class="fc" id="L666">                            mind[i][j] += 400;</span>
+<span class="fc" id="L667">                            break;</span>
+                        case 1:
+<span class="fc" id="L669">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L672">                    countm = 0;</span>
+<span class="fc" id="L673">                    county = 0;</span>
+<span class="fc" id="L674">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L676" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L677" title="All 4 branches covered.">                    if (mind[i - k][j - k] != state_color &amp;&amp; mind[i - k][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L678" title="All 2 branches covered.">                    if (mind[i - k][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L679" title="All 2 branches covered.">                    if (mind[i - k][j - k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L683" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L684">                    mind[i][j] += 0;</span>
+<span class="fc" id="L685">                    countm = 0;</span>
+<span class="fc" id="L686">                    county = 0;</span>
+<span class="fc" id="L687">                    space = 0;</span>
+<span class="fc bfc" id="L688" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L689">                    mind[i][j] += 7;</span>
+<span class="fc" id="L690">                    countm = 0;</span>
+<span class="fc" id="L691">                    county = 0;</span>
+<span class="fc" id="L692">                    space = 0;</span>
+                } else {
+<span class="pc bpc" id="L694" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L696">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L698">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L699">                            break;</span>
+                        case 3:
+<span class="fc" id="L701">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L702">                            break;</span>
+                        case 2:
+<span class="fc" id="L704">                            mind[i][j] += 800;</span>
+<span class="fc" id="L705">                            break;</span>
+                        case 1:
+<span class="fc" id="L707">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L712" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L714">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L716">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L717">                            break;</span>
+                        case 3:
+<span class="fc" id="L719">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L720">                            break;</span>
+                        case 2:
+<span class="fc" id="L722">                            mind[i][j] += 400;</span>
+<span class="fc" id="L723">                            break;</span>
+                        case 1:
+<span class="fc" id="L725">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L728">                    countm = 0;</span>
+<span class="fc" id="L729">                    county = 0;</span>
+<span class="fc" id="L730">                    space = 0;</span>
+                }
+            }
+        }
+<span class="fc" id="L734">        return 0;</span>
+    }
+
+    public int pingjia6(int[][] mind) {
+<span class="fc" id="L738">        int countm = 0;</span>
+<span class="fc" id="L739">        int county = 0;</span>
+<span class="fc" id="L740">        int space = 0;</span>
+<span class="fc bfc" id="L741" title="All 2 branches covered.">        for (int i = 1; i &lt; 5; i++)</span>
+<span class="fc bfc" id="L742" title="All 2 branches covered.">            for (int j = 15; j &lt; 20; j++) {</span>
+<span class="fc bfc" id="L743" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L744" title="All 4 branches covered.">                    if (mind[i][j - k] != state_color &amp;&amp; mind[i][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L745" title="All 2 branches covered.">                    if (mind[i][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L746" title="All 2 branches covered.">                    if (mind[i][j - k] == -state_color) county++;</span>
+
+                }
+<span class="fc bfc" id="L749" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L750">                    mind[i][j] += 0;</span>
+<span class="fc" id="L751">                    countm = 0;</span>
+<span class="fc" id="L752">                    county = 0;</span>
+<span class="fc" id="L753">                    space = 0;</span>
+<span class="fc bfc" id="L754" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L755">                    mind[i][j] += 7;</span>
+<span class="fc" id="L756">                    countm = 0;</span>
+<span class="fc" id="L757">                    county = 0;</span>
+<span class="fc" id="L758">                    space = 0;</span>
+                } else {
+<span class="fc bfc" id="L760" title="All 6 branches covered.">                    switch (countm) {</span>
+                        case 5:
+<span class="fc" id="L762">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L764">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L765">                            break;</span>
+                        case 3:
+<span class="fc" id="L767">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L768">                            break;</span>
+                        case 2:
+<span class="fc" id="L770">                            mind[i][j] += 800;</span>
+<span class="fc" id="L771">                            break;</span>
+                        case 1:
+<span class="fc" id="L773">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="fc bfc" id="L778" title="All 6 branches covered.">                    switch (county) {</span>
+                        case 5:
+<span class="fc" id="L780">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L782">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L783">                            break;</span>
+                        case 3:
+<span class="fc" id="L785">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L786">                            break;</span>
+                        case 2:
+<span class="fc" id="L788">                            mind[i][j] += 400;</span>
+<span class="fc" id="L789">                            break;</span>
+                        case 1:
+<span class="fc" id="L791">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L794">                    countm = 0;</span>
+<span class="fc" id="L795">                    county = 0;</span>
+<span class="fc" id="L796">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L798" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L799" title="All 4 branches covered.">                    if (mind[i + k][j] != state_color &amp;&amp; mind[i + k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L800" title="All 2 branches covered.">                    if (mind[i + k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L801" title="All 2 branches covered.">                    if (mind[i + k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L805" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L806">                    mind[i][j] += 0;</span>
+<span class="fc" id="L807">                    countm = 0;</span>
+<span class="fc" id="L808">                    county = 0;</span>
+<span class="fc" id="L809">                    space = 0;</span>
+<span class="fc bfc" id="L810" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L811">                    mind[i][j] += 7;</span>
+<span class="fc" id="L812">                    countm = 0;</span>
+<span class="fc" id="L813">                    county = 0;</span>
+<span class="fc" id="L814">                    space = 0;</span>
+                } else {
+<span class="pc bpc" id="L816" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L818">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L820">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L821">                            break;</span>
+                        case 3:
+<span class="fc" id="L823">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L824">                            break;</span>
+                        case 2:
+<span class="fc" id="L826">                            mind[i][j] += 800;</span>
+<span class="fc" id="L827">                            break;</span>
+                        case 1:
+<span class="fc" id="L829">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L834" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L836">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L838">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L839">                            break;</span>
+                        case 3:
+<span class="fc" id="L841">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L842">                            break;</span>
+                        case 2:
+<span class="fc" id="L844">                            mind[i][j] += 400;</span>
+<span class="fc" id="L845">                            break;</span>
+                        case 1:
+<span class="fc" id="L847">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L850">                    countm = 0;</span>
+<span class="fc" id="L851">                    county = 0;</span>
+<span class="fc" id="L852">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L854" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L855" title="All 4 branches covered.">                    if (mind[i + k][j - k] != state_color &amp;&amp; mind[i + k][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L856" title="All 2 branches covered.">                    if (mind[i + k][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L857" title="All 2 branches covered.">                    if (mind[i + k][j - k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L861" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L862">                    mind[i][j] += 0;</span>
+<span class="fc" id="L863">                    countm = 0;</span>
+<span class="fc" id="L864">                    county = 0;</span>
+<span class="fc" id="L865">                    space = 0;</span>
+<span class="fc bfc" id="L866" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L867">                    mind[i][j] += 7;</span>
+<span class="fc" id="L868">                    countm = 0;</span>
+<span class="fc" id="L869">                    county = 0;</span>
+<span class="fc" id="L870">                    space = 0;</span>
+                } else {
+<span class="pc bpc" id="L872" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L874">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L876">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L877">                            break;</span>
+                        case 3:
+<span class="fc" id="L879">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L880">                            break;</span>
+                        case 2:
+<span class="fc" id="L882">                            mind[i][j] += 800;</span>
+<span class="fc" id="L883">                            break;</span>
+                        case 1:
+<span class="fc" id="L885">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L890" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L892">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L894">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L895">                            break;</span>
+                        case 3:
+<span class="fc" id="L897">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L898">                            break;</span>
+                        case 2:
+<span class="fc" id="L900">                            mind[i][j] += 400;</span>
+<span class="fc" id="L901">                            break;</span>
+                        case 1:
+<span class="fc" id="L903">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L906">                    countm = 0;</span>
+<span class="fc" id="L907">                    county = 0;</span>
+<span class="fc" id="L908">                    space = 0;</span>
+                }
+            }
+<span class="fc" id="L911">        return 0;</span>
+    }
+
+    public int pingjia7(int[][] mind) {
+<span class="fc" id="L915">        int countm = 0;</span>
+<span class="fc" id="L916">        int county = 0;</span>
+<span class="fc" id="L917">        int space = 0;</span>
+<span class="fc" id="L918">        int jinshou=0;</span>
+<span class="fc bfc" id="L919" title="All 2 branches covered.">        for (int i = 5; i &lt; 15; i++)</span>
+<span class="fc bfc" id="L920" title="All 2 branches covered.">            for (int j = 1; j &lt; 5; j++) {</span>
+<span class="fc bfc" id="L921" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L922" title="All 4 branches covered.">                    if (mind[i][j + k] != state_color &amp;&amp; mind[i][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L923" title="All 2 branches covered.">                    if (mind[i][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L924" title="All 2 branches covered.">                    if (mind[i][j + k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L928" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L929">                    mind[i][j] += 0;</span>
+<span class="fc" id="L930">                    countm = 0;</span>
+<span class="fc" id="L931">                    county = 0;</span>
+<span class="fc" id="L932">                    space = 0;</span>
+<span class="fc bfc" id="L933" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L934">                    mind[i][j] += 7;</span>
+<span class="fc" id="L935">                    countm = 0;</span>
+<span class="fc" id="L936">                    county = 0;</span>
+<span class="fc" id="L937">                    space = 0;</span>
+<span class="fc bfc" id="L938" title="All 2 branches covered.">                } else {if(countm&gt;=2) {</span>
+<span class="fc" id="L939">                    System.out.println(&quot;111111111111111&quot;);</span>
+<span class="fc" id="L940">                    System.out.println(jinshou);</span>
+<span class="fc" id="L941">                    jinshou += 1;</span>
+                }
+<span class="fc bfc" id="L943" title="All 6 branches covered.">                    switch (countm) {</span>
+                        case 5:
+<span class="fc" id="L945">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L947">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L948">                            break;</span>
+                        case 3:
+<span class="fc" id="L950">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L951">                            break;</span>
+                        case 2:
+<span class="fc" id="L953">                            mind[i][j] += 800;</span>
+<span class="fc" id="L954">                            break;</span>
+                        case 1:
+<span class="fc" id="L956">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="fc bfc" id="L961" title="All 6 branches covered.">                    switch (county) {</span>
+                        case 5:
+<span class="fc" id="L963">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L965">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L966">                            break;</span>
+                        case 3:
+<span class="fc" id="L968">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L969">                            break;</span>
+                        case 2:
+<span class="fc" id="L971">                            mind[i][j] += 400;</span>
+<span class="fc" id="L972">                            break;</span>
+                        case 1:
+<span class="fc" id="L974">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L977">                    countm = 0;</span>
+<span class="fc" id="L978">                    county = 0;</span>
+<span class="fc" id="L979">                    space = 0;</span>
+                }
+                //�����
+
+
+<span class="fc bfc" id="L984" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L985" title="All 4 branches covered.">                    if (mind[i + k][j] != state_color &amp;&amp; mind[i + k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L986" title="All 2 branches covered.">                    if (mind[i + k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L987" title="All 2 branches covered.">                    if (mind[i + k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L991" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L992">                    mind[i][j] += 0;</span>
+<span class="fc" id="L993">                    countm = 0;</span>
+<span class="fc" id="L994">                    county = 0;</span>
+<span class="fc" id="L995">                    space = 0;</span>
+<span class="fc bfc" id="L996" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L997">                    mind[i][j] += 7;</span>
+<span class="fc" id="L998">                    countm = 0;</span>
+<span class="fc" id="L999">                    county = 0;</span>
+<span class="fc" id="L1000">                    space = 0;</span>
+<span class="fc bfc" id="L1001" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1002" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1004">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1006">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1007">                            break;</span>
+                        case 3:
+<span class="fc" id="L1009">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1010">                            break;</span>
+                        case 2:
+<span class="fc" id="L1012">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1013">                            break;</span>
+                        case 1:
+<span class="fc" id="L1015">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1020" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1022">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1024">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1025">                            break;</span>
+                        case 3:
+<span class="fc" id="L1027">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1028">                            break;</span>
+                        case 2:
+<span class="fc" id="L1030">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1031">                            break;</span>
+                        case 1:
+<span class="fc" id="L1033">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1036">                    countm = 0;</span>
+<span class="fc" id="L1037">                    county = 0;</span>
+<span class="fc" id="L1038">                    space = 0;</span>
+                }
+
+                //�����
+
+<span class="fc bfc" id="L1043" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1044" title="All 4 branches covered.">                    if (mind[i - k][j] != state_color &amp;&amp; mind[i - k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L1045" title="All 2 branches covered.">                    if (mind[i - k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L1046" title="All 2 branches covered.">                    if (mind[i - k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1050" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1051">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1052">                    countm = 0;</span>
+<span class="fc" id="L1053">                    county = 0;</span>
+<span class="fc" id="L1054">                    space = 0;</span>
+<span class="fc bfc" id="L1055" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1056">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1057">                    countm = 0;</span>
+<span class="fc" id="L1058">                    county = 0;</span>
+<span class="fc" id="L1059">                    space = 0;</span>
+<span class="fc bfc" id="L1060" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1061" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1063">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1065">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1066">                            break;</span>
+                        case 3:
+<span class="fc" id="L1068">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1069">                            break;</span>
+                        case 2:
+<span class="fc" id="L1071">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1072">                            break;</span>
+                        case 1:
+<span class="fc" id="L1074">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1079" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1081">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1083">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1084">                            break;</span>
+                        case 3:
+<span class="fc" id="L1086">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1087">                            break;</span>
+                        case 2:
+<span class="fc" id="L1089">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1090">                            break;</span>
+                        case 1:
+<span class="fc" id="L1092">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1095">                    countm = 0;</span>
+<span class="fc" id="L1096">                    county = 0;</span>
+<span class="fc" id="L1097">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L1099" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1100" title="All 4 branches covered.">                    if (mind[i + k][j + k] != state_color &amp;&amp; mind[i + k][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1101" title="All 2 branches covered.">                    if (mind[i + k][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1102" title="All 2 branches covered.">                    if (mind[i + k][j + k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1106" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1107">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1108">                    countm = 0;</span>
+<span class="fc" id="L1109">                    county = 0;</span>
+<span class="fc" id="L1110">                    space = 0;</span>
+<span class="fc bfc" id="L1111" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1112">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1113">                    countm = 0;</span>
+<span class="fc" id="L1114">                    county = 0;</span>
+<span class="fc" id="L1115">                    space = 0;</span>
+<span class="fc bfc" id="L1116" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1117" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1119">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1121">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1122">                            break;</span>
+                        case 3:
+<span class="fc" id="L1124">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1125">                            break;</span>
+                        case 2:
+<span class="fc" id="L1127">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1128">                            break;</span>
+                        case 1:
+<span class="fc" id="L1130">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1135" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1137">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1139">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1140">                            break;</span>
+                        case 3:
+<span class="fc" id="L1142">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1143">                            break;</span>
+                        case 2:
+<span class="fc" id="L1145">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1146">                            break;</span>
+                        case 1:
+<span class="fc" id="L1148">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1151">                    countm = 0;</span>
+<span class="fc" id="L1152">                    county = 0;</span>
+<span class="fc" id="L1153">                    space = 0;</span>
+                }
+                //����
+<span class="fc bfc" id="L1156" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1157" title="All 4 branches covered.">                    if (mind[i - k][j + k] != state_color &amp;&amp; mind[i - k][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1158" title="All 2 branches covered.">                    if (mind[i - k][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1159" title="All 2 branches covered.">                    if (mind[i - k][j + k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1163" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1164">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1165">                    countm = 0;</span>
+<span class="fc" id="L1166">                    county = 0;</span>
+<span class="fc" id="L1167">                    space = 0;</span>
+<span class="fc bfc" id="L1168" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1169">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1170">                    countm = 0;</span>
+<span class="fc" id="L1171">                    county = 0;</span>
+<span class="fc" id="L1172">                    space = 0;</span>
+                } else {
+<span class="fc bfc" id="L1174" title="All 2 branches covered.">                    if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1175" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1177">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1179">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1180">                            break;</span>
+                        case 3:
+<span class="fc" id="L1182">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1183">                            break;</span>
+                        case 2:
+<span class="fc" id="L1185">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1186">                            break;</span>
+                        case 1:
+<span class="fc" id="L1188">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1193" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1195">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1197">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1198">                            break;</span>
+                        case 3:
+<span class="fc" id="L1200">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1201">                            break;</span>
+                        case 2:
+<span class="fc" id="L1203">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1204">                            break;</span>
+                        case 1:
+<span class="fc" id="L1206">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1209">                    countm = 0;</span>
+<span class="fc" id="L1210">                    county = 0;</span>
+<span class="fc" id="L1211">                    space = 0;</span>
+<span class="fc bfc" id="L1212" title="All 2 branches covered.">                }if(jinshou&gt;=2)mind[i][j]=0;</span>
+<span class="fc" id="L1213">                System.out.println(jinshou);</span>
+<span class="fc" id="L1214">                jinshou=0;</span>
+            }
+<span class="fc" id="L1216">        return 0;</span>
+    }
+
+    public int pingjia8(int[][] mind) {
+<span class="fc" id="L1220">        int countm = 0;</span>
+<span class="fc" id="L1221">        int county = 0;</span>
+<span class="fc" id="L1222">        int space = 0;</span>
+<span class="fc" id="L1223">        int jinshou=0;</span>
+<span class="fc bfc" id="L1224" title="All 2 branches covered.">        for (int i = 15; i &lt; 20; i++)</span>
+<span class="fc bfc" id="L1225" title="All 2 branches covered.">            for (int j = 5; j &lt; 15; j++) {</span>
+<span class="fc bfc" id="L1226" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1227" title="All 4 branches covered.">                    if (mind[i][j - k] != state_color &amp;&amp; mind[i][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1228" title="All 2 branches covered.">                    if (mind[i][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1229" title="All 2 branches covered.">                    if (mind[i][j - k] == -state_color) county++;</span>
+
+                }
+<span class="fc bfc" id="L1232" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1233">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1234">                    countm = 0;</span>
+<span class="fc" id="L1235">                    county = 0;</span>
+<span class="fc" id="L1236">                    space = 0;</span>
+<span class="fc bfc" id="L1237" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1238">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1239">                    countm = 0;</span>
+<span class="fc" id="L1240">                    county = 0;</span>
+<span class="fc" id="L1241">                    space = 0;</span>
+<span class="fc bfc" id="L1242" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="fc bfc" id="L1243" title="All 6 branches covered.">                    switch (countm) {</span>
+                        case 5:
+<span class="fc" id="L1245">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1247">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1248">                            break;</span>
+                        case 3:
+<span class="fc" id="L1250">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1251">                            break;</span>
+                        case 2:
+<span class="fc" id="L1253">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1254">                            break;</span>
+                        case 1:
+<span class="fc" id="L1256">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="fc bfc" id="L1261" title="All 6 branches covered.">                    switch (county) {</span>
+                        case 5:
+<span class="fc" id="L1263">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1265">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1266">                            break;</span>
+                        case 3:
+<span class="fc" id="L1268">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1269">                            break;</span>
+                        case 2:
+<span class="fc" id="L1271">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1272">                            break;</span>
+                        case 1:
+<span class="fc" id="L1274">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1277">                    countm = 0;</span>
+<span class="fc" id="L1278">                    county = 0;</span>
+<span class="fc" id="L1279">                    space = 0;</span>
+                }
+                //�ұ����
+<span class="fc bfc" id="L1282" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1283" title="All 4 branches covered.">                    if (mind[i][j + k] != state_color &amp;&amp; mind[i][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1284" title="All 2 branches covered.">                    if (mind[i][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1285" title="All 2 branches covered.">                    if (mind[i][j + k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1289" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1290">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1291">                    countm = 0;</span>
+<span class="fc" id="L1292">                    county = 0;</span>
+<span class="fc" id="L1293">                    space = 0;</span>
+<span class="fc bfc" id="L1294" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1295">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1296">                    countm = 0;</span>
+<span class="fc" id="L1297">                    county = 0;</span>
+<span class="fc" id="L1298">                    space = 0;</span>
+<span class="fc bfc" id="L1299" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1300" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1302">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1304">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1305">                            break;</span>
+                        case 3:
+<span class="fc" id="L1307">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1308">                            break;</span>
+                        case 2:
+<span class="fc" id="L1310">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1311">                            break;</span>
+                        case 1:
+<span class="fc" id="L1313">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1318" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1320">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1322">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1323">                            break;</span>
+                        case 3:
+<span class="fc" id="L1325">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1326">                            break;</span>
+                        case 2:
+<span class="fc" id="L1328">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1329">                            break;</span>
+                        case 1:
+<span class="fc" id="L1331">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1334">                    countm = 0;</span>
+<span class="fc" id="L1335">                    county = 0;</span>
+<span class="fc" id="L1336">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L1338" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1339" title="All 4 branches covered.">                    if (mind[i - k][j] != state_color &amp;&amp; mind[i - k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L1340" title="All 2 branches covered.">                    if (mind[i - k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L1341" title="All 2 branches covered.">                    if (mind[i - k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1345" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1346">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1347">                    countm = 0;</span>
+<span class="fc" id="L1348">                    county = 0;</span>
+<span class="fc" id="L1349">                    space = 0;</span>
+<span class="fc bfc" id="L1350" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1351">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1352">                    countm = 0;</span>
+<span class="fc" id="L1353">                    county = 0;</span>
+<span class="fc" id="L1354">                    space = 0;</span>
+<span class="fc bfc" id="L1355" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1356" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1358">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1360">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1361">                            break;</span>
+                        case 3:
+<span class="fc" id="L1363">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1364">                            break;</span>
+                        case 2:
+<span class="fc" id="L1366">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1367">                            break;</span>
+                        case 1:
+<span class="fc" id="L1369">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1374" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1376">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1378">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1379">                            break;</span>
+                        case 3:
+<span class="fc" id="L1381">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1382">                            break;</span>
+                        case 2:
+<span class="fc" id="L1384">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1385">                            break;</span>
+                        case 1:
+<span class="fc" id="L1387">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1390">                    countm = 0;</span>
+<span class="fc" id="L1391">                    county = 0;</span>
+<span class="fc" id="L1392">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L1394" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1395" title="All 4 branches covered.">                    if (mind[i - k][j + k] != state_color &amp;&amp; mind[i - k][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1396" title="All 2 branches covered.">                    if (mind[i - k][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1397" title="All 2 branches covered.">                    if (mind[i - k][j + k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1401" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1402">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1403">                    countm = 0;</span>
+<span class="fc" id="L1404">                    county = 0;</span>
+<span class="fc" id="L1405">                    space = 0;</span>
+<span class="fc bfc" id="L1406" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1407">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1408">                    countm = 0;</span>
+<span class="fc" id="L1409">                    county = 0;</span>
+<span class="fc" id="L1410">                    space = 0;</span>
+<span class="fc bfc" id="L1411" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1412" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1414">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1416">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1417">                            break;</span>
+                        case 3:
+<span class="fc" id="L1419">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1420">                            break;</span>
+                        case 2:
+<span class="fc" id="L1422">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1423">                            break;</span>
+                        case 1:
+<span class="fc" id="L1425">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1430" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1432">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1434">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1435">                            break;</span>
+                        case 3:
+<span class="fc" id="L1437">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1438">                            break;</span>
+                        case 2:
+<span class="fc" id="L1440">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1441">                            break;</span>
+                        case 1:
+<span class="fc" id="L1443">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1446">                    countm = 0;</span>
+<span class="fc" id="L1447">                    county = 0;</span>
+<span class="fc" id="L1448">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L1450" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1451" title="All 4 branches covered.">                    if (mind[i - k][j - k] != state_color &amp;&amp; mind[i - k][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1452" title="All 2 branches covered.">                    if (mind[i - k][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1453" title="All 2 branches covered.">                    if (mind[i - k][j - k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1457" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1458">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1459">                    countm = 0;</span>
+<span class="fc" id="L1460">                    county = 0;</span>
+<span class="fc" id="L1461">                    space = 0;</span>
+<span class="fc bfc" id="L1462" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1463">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1464">                    countm = 0;</span>
+<span class="fc" id="L1465">                    county = 0;</span>
+<span class="fc" id="L1466">                    space = 0;</span>
+<span class="fc bfc" id="L1467" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1468" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1470">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1472">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1473">                            break;</span>
+                        case 3:
+<span class="fc" id="L1475">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1476">                            break;</span>
+                        case 2:
+<span class="fc" id="L1478">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1479">                            break;</span>
+                        case 1:
+<span class="fc" id="L1481">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1486" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1488">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1490">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1491">                            break;</span>
+                        case 3:
+<span class="fc" id="L1493">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1494">                            break;</span>
+                        case 2:
+<span class="fc" id="L1496">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1497">                            break;</span>
+                        case 1:
+<span class="fc" id="L1499">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1502">                    countm = 0;</span>
+<span class="fc" id="L1503">                    county = 0;</span>
+<span class="fc" id="L1504">                    space = 0;</span>
+<span class="fc bfc" id="L1505" title="All 2 branches covered.">                }if(jinshou&gt;=2)mind[i][j]=0;</span>
+<span class="fc" id="L1506">                jinshou=0;</span>
+
+            }
+<span class="fc" id="L1509">        return 0;</span>
+    }
+
+    public int pingjia9(int[][] mind) {
+<span class="fc" id="L1513">        int countm = 0;</span>
+<span class="fc" id="L1514">        int county = 0;</span>
+<span class="fc" id="L1515">        int space = 0;</span>
+<span class="fc" id="L1516">        int jinshou=0;</span>
+<span class="fc bfc" id="L1517" title="All 2 branches covered.">        for (int i = 1; i &lt; 5; i++)</span>
+<span class="fc bfc" id="L1518" title="All 2 branches covered.">            for (int j = 5; j &lt; 15; j++) {</span>
+<span class="fc bfc" id="L1519" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1520" title="All 4 branches covered.">                    if (mind[i][j - k] != state_color &amp;&amp; mind[i][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1521" title="All 2 branches covered.">                    if (mind[i][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1522" title="All 2 branches covered.">                    if (mind[i][j - k] == -state_color) county++;</span>
+
+                }
+<span class="fc bfc" id="L1525" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1526">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1527">                    countm = 0;</span>
+<span class="fc" id="L1528">                    county = 0;</span>
+<span class="fc" id="L1529">                    space = 0;</span>
+<span class="fc bfc" id="L1530" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1531">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1532">                    countm = 0;</span>
+<span class="fc" id="L1533">                    county = 0;</span>
+<span class="fc" id="L1534">                    space = 0;</span>
+<span class="fc bfc" id="L1535" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="fc bfc" id="L1536" title="All 6 branches covered.">                    switch (countm) {</span>
+                        case 5:
+<span class="fc" id="L1538">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1540">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1541">                            break;</span>
+                        case 3:
+<span class="fc" id="L1543">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1544">                            break;</span>
+                        case 2:
+<span class="fc" id="L1546">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1547">                            break;</span>
+                        case 1:
+<span class="fc" id="L1549">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="fc bfc" id="L1554" title="All 6 branches covered.">                    switch (county) {</span>
+                        case 5:
+<span class="fc" id="L1556">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1558">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1559">                            break;</span>
+                        case 3:
+<span class="fc" id="L1561">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1562">                            break;</span>
+                        case 2:
+<span class="fc" id="L1564">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1565">                            break;</span>
+                        case 1:
+<span class="fc" id="L1567">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1570">                    countm = 0;</span>
+<span class="fc" id="L1571">                    county = 0;</span>
+<span class="fc" id="L1572">                    space = 0;</span>
+                }
+                //�ұ����
+<span class="fc bfc" id="L1575" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1576" title="All 4 branches covered.">                    if (mind[i][j + k] != state_color &amp;&amp; mind[i][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1577" title="All 2 branches covered.">                    if (mind[i][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1578" title="All 2 branches covered.">                    if (mind[i][j + k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1582" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1583">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1584">                    countm = 0;</span>
+<span class="fc" id="L1585">                    county = 0;</span>
+<span class="fc" id="L1586">                    space = 0;</span>
+<span class="fc bfc" id="L1587" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1588">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1589">                    countm = 0;</span>
+<span class="fc" id="L1590">                    county = 0;</span>
+<span class="fc" id="L1591">                    space = 0;</span>
+<span class="fc bfc" id="L1592" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1593" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1595">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1597">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1598">                            break;</span>
+                        case 3:
+<span class="fc" id="L1600">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1601">                            break;</span>
+                        case 2:
+<span class="fc" id="L1603">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1604">                            break;</span>
+                        case 1:
+<span class="fc" id="L1606">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1611" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1613">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1615">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1616">                            break;</span>
+                        case 3:
+<span class="fc" id="L1618">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1619">                            break;</span>
+                        case 2:
+<span class="fc" id="L1621">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1622">                            break;</span>
+                        case 1:
+<span class="fc" id="L1624">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1627">                    countm = 0;</span>
+<span class="fc" id="L1628">                    county = 0;</span>
+<span class="fc" id="L1629">                    space = 0;</span>
+                }
+                //�����
+
+
+<span class="fc bfc" id="L1634" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1635" title="All 4 branches covered.">                    if (mind[i + k][j] != state_color &amp;&amp; mind[i + k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L1636" title="All 2 branches covered.">                    if (mind[i + k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L1637" title="All 2 branches covered.">                    if (mind[i + k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1641" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1642">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1643">                    countm = 0;</span>
+<span class="fc" id="L1644">                    county = 0;</span>
+<span class="fc" id="L1645">                    space = 0;</span>
+<span class="fc bfc" id="L1646" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1647">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1648">                    countm = 0;</span>
+<span class="fc" id="L1649">                    county = 0;</span>
+<span class="fc" id="L1650">                    space = 0;</span>
+<span class="fc bfc" id="L1651" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1652" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1654">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1656">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1657">                            break;</span>
+                        case 3:
+<span class="fc" id="L1659">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1660">                            break;</span>
+                        case 2:
+<span class="fc" id="L1662">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1663">                            break;</span>
+                        case 1:
+<span class="fc" id="L1665">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1670" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1672">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1674">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1675">                            break;</span>
+                        case 3:
+<span class="fc" id="L1677">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1678">                            break;</span>
+                        case 2:
+<span class="fc" id="L1680">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1681">                            break;</span>
+                        case 1:
+<span class="fc" id="L1683">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1686">                    countm = 0;</span>
+<span class="fc" id="L1687">                    county = 0;</span>
+<span class="fc" id="L1688">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L1690" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1691" title="All 4 branches covered.">                    if (mind[i + k][j + k] != state_color &amp;&amp; mind[i + k][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1692" title="All 2 branches covered.">                    if (mind[i + k][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1693" title="All 2 branches covered.">                    if (mind[i + k][j + k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1697" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1698">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1699">                    countm = 0;</span>
+<span class="fc" id="L1700">                    county = 0;</span>
+<span class="fc" id="L1701">                    space = 0;</span>
+<span class="fc bfc" id="L1702" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1703">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1704">                    countm = 0;</span>
+<span class="fc" id="L1705">                    county = 0;</span>
+<span class="fc" id="L1706">                    space = 0;</span>
+<span class="fc bfc" id="L1707" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1708" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1710">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1712">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1713">                            break;</span>
+                        case 3:
+<span class="fc" id="L1715">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1716">                            break;</span>
+                        case 2:
+<span class="fc" id="L1718">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1719">                            break;</span>
+                        case 1:
+<span class="fc" id="L1721">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1726" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1728">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1730">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1731">                            break;</span>
+                        case 3:
+<span class="fc" id="L1733">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1734">                            break;</span>
+                        case 2:
+<span class="fc" id="L1736">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1737">                            break;</span>
+                        case 1:
+<span class="fc" id="L1739">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1742">                    countm = 0;</span>
+<span class="fc" id="L1743">                    county = 0;</span>
+<span class="fc" id="L1744">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L1746" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1747" title="All 4 branches covered.">                    if (mind[i + k][j - k] != state_color &amp;&amp; mind[i + k][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1748" title="All 2 branches covered.">                    if (mind[i + k][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1749" title="All 2 branches covered.">                    if (mind[i + k][j - k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1753" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1754">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1755">                    countm = 0;</span>
+<span class="fc" id="L1756">                    county = 0;</span>
+<span class="fc" id="L1757">                    space = 0;</span>
+<span class="fc bfc" id="L1758" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1759">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1760">                    countm = 0;</span>
+<span class="fc" id="L1761">                    county = 0;</span>
+<span class="fc" id="L1762">                    space = 0;</span>
+<span class="fc bfc" id="L1763" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1764" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1766">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1768">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1769">                            break;</span>
+                        case 3:
+<span class="fc" id="L1771">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1772">                            break;</span>
+                        case 2:
+<span class="fc" id="L1774">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1775">                            break;</span>
+                        case 1:
+<span class="fc" id="L1777">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1782" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1784">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1786">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1787">                            break;</span>
+                        case 3:
+<span class="fc" id="L1789">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1790">                            break;</span>
+                        case 2:
+<span class="fc" id="L1792">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1793">                            break;</span>
+                        case 1:
+<span class="fc" id="L1795">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1798">                    countm = 0;</span>
+<span class="fc" id="L1799">                    county = 0;</span>
+<span class="fc" id="L1800">                    space = 0;</span>
+<span class="pc bpc" id="L1801" title="1 of 2 branches missed.">                }if(jinshou&gt;=2)mind[i][j]=0;</span>
+<span class="fc" id="L1802">                jinshou=0;</span>
+            }
+<span class="fc" id="L1804">        return 0;</span>
+    }
+
+    public int pingjia10(int[][] mind) {
+<span class="fc" id="L1808">        int countm = 0;</span>
+<span class="fc" id="L1809">        int county = 0;</span>
+<span class="fc" id="L1810">        int space = 0;</span>
+<span class="fc" id="L1811">        int jinshou=0;</span>
+<span class="fc bfc" id="L1812" title="All 2 branches covered.">        for (int i = 5; i &lt; 15; i++)</span>
+<span class="fc bfc" id="L1813" title="All 2 branches covered.">            for (int j = 15; j &lt; 20; j++) {</span>
+<span class="fc bfc" id="L1814" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1815" title="All 4 branches covered.">                    if (mind[i][j - k] != state_color &amp;&amp; mind[i][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1816" title="All 2 branches covered.">                    if (mind[i][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1817" title="All 2 branches covered.">                    if (mind[i][j - k] == -state_color) county++;</span>
+
+                }
+<span class="fc bfc" id="L1820" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1821">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1822">                    countm = 0;</span>
+<span class="fc" id="L1823">                    county = 0;</span>
+<span class="fc" id="L1824">                    space = 0;</span>
+<span class="fc bfc" id="L1825" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1826">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1827">                    countm = 0;</span>
+<span class="fc" id="L1828">                    county = 0;</span>
+<span class="fc" id="L1829">                    space = 0;</span>
+<span class="fc bfc" id="L1830" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="fc bfc" id="L1831" title="All 6 branches covered.">                    switch (countm) {</span>
+                        case 5:
+<span class="fc" id="L1833">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1835">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1836">                            break;</span>
+                        case 3:
+<span class="fc" id="L1838">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1839">                            break;</span>
+                        case 2:
+<span class="fc" id="L1841">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1842">                            break;</span>
+                        case 1:
+<span class="fc" id="L1844">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="fc bfc" id="L1849" title="All 6 branches covered.">                    switch (county) {</span>
+                        case 5:
+<span class="fc" id="L1851">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1853">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1854">                            break;</span>
+                        case 3:
+<span class="fc" id="L1856">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1857">                            break;</span>
+                        case 2:
+<span class="fc" id="L1859">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1860">                            break;</span>
+                        case 1:
+<span class="fc" id="L1862">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1865">                    countm = 0;</span>
+<span class="fc" id="L1866">                    county = 0;</span>
+<span class="fc" id="L1867">                    space = 0;</span>
+                }
+<span class="fc bfc" id="L1869" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1870" title="All 4 branches covered.">                    if (mind[i + k][j] != state_color &amp;&amp; mind[i + k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L1871" title="All 2 branches covered.">                    if (mind[i + k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L1872" title="All 2 branches covered.">                    if (mind[i + k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1876" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1877">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1878">                    countm = 0;</span>
+<span class="fc" id="L1879">                    county = 0;</span>
+<span class="fc" id="L1880">                    space = 0;</span>
+<span class="fc bfc" id="L1881" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1882">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1883">                    countm = 0;</span>
+<span class="fc" id="L1884">                    county = 0;</span>
+<span class="fc" id="L1885">                    space = 0;</span>
+<span class="fc bfc" id="L1886" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1887" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1889">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1891">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1892">                            break;</span>
+                        case 3:
+<span class="fc" id="L1894">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1895">                            break;</span>
+                        case 2:
+<span class="fc" id="L1897">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1898">                            break;</span>
+                        case 1:
+<span class="fc" id="L1900">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1905" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1907">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1909">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1910">                            break;</span>
+                        case 3:
+<span class="fc" id="L1912">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1913">                            break;</span>
+                        case 2:
+<span class="fc" id="L1915">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1916">                            break;</span>
+                        case 1:
+<span class="fc" id="L1918">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1921">                    countm = 0;</span>
+<span class="fc" id="L1922">                    county = 0;</span>
+<span class="fc" id="L1923">                    space = 0;</span>
+                }
+
+                //�����
+
+<span class="fc bfc" id="L1928" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1929" title="All 4 branches covered.">                    if (mind[i - k][j] != state_color &amp;&amp; mind[i - k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L1930" title="All 2 branches covered.">                    if (mind[i - k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L1931" title="All 2 branches covered.">                    if (mind[i - k][j] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1935" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1936">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1937">                    countm = 0;</span>
+<span class="fc" id="L1938">                    county = 0;</span>
+<span class="fc" id="L1939">                    space = 0;</span>
+<span class="fc bfc" id="L1940" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L1941">                    mind[i][j] += 7;</span>
+<span class="fc" id="L1942">                    countm = 0;</span>
+<span class="fc" id="L1943">                    county = 0;</span>
+<span class="fc" id="L1944">                    space = 0;</span>
+<span class="fc bfc" id="L1945" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L1946" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L1948">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L1950">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L1951">                            break;</span>
+                        case 3:
+<span class="fc" id="L1953">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L1954">                            break;</span>
+                        case 2:
+<span class="fc" id="L1956">                            mind[i][j] += 800;</span>
+<span class="fc" id="L1957">                            break;</span>
+                        case 1:
+<span class="fc" id="L1959">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L1964" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L1966">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L1968">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L1969">                            break;</span>
+                        case 3:
+<span class="fc" id="L1971">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L1972">                            break;</span>
+                        case 2:
+<span class="fc" id="L1974">                            mind[i][j] += 400;</span>
+<span class="fc" id="L1975">                            break;</span>
+                        case 1:
+<span class="fc" id="L1977">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L1980">                    countm = 0;</span>
+<span class="fc" id="L1981">                    county = 0;</span>
+<span class="fc" id="L1982">                    space = 0;</span>
+                }
+
+
+                //��б�����
+
+<span class="fc bfc" id="L1988" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L1989" title="All 4 branches covered.">                    if (mind[i + k][j - k] != state_color &amp;&amp; mind[i + k][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L1990" title="All 2 branches covered.">                    if (mind[i + k][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L1991" title="All 2 branches covered.">                    if (mind[i + k][j - k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L1995" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L1996">                    mind[i][j] += 0;</span>
+<span class="fc" id="L1997">                    countm = 0;</span>
+<span class="fc" id="L1998">                    county = 0;</span>
+<span class="fc" id="L1999">                    space = 0;</span>
+<span class="fc bfc" id="L2000" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L2001">                    mind[i][j] += 7;</span>
+<span class="fc" id="L2002">                    countm = 0;</span>
+<span class="fc" id="L2003">                    county = 0;</span>
+<span class="fc" id="L2004">                    space = 0;</span>
+<span class="fc bfc" id="L2005" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2006" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L2008">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L2010">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L2011">                            break;</span>
+                        case 3:
+<span class="fc" id="L2013">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L2014">                            break;</span>
+                        case 2:
+<span class="fc" id="L2016">                            mind[i][j] += 800;</span>
+<span class="fc" id="L2017">                            break;</span>
+                        case 1:
+<span class="fc" id="L2019">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L2024" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L2026">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L2028">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L2029">                            break;</span>
+                        case 3:
+<span class="fc" id="L2031">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L2032">                            break;</span>
+                        case 2:
+<span class="fc" id="L2034">                            mind[i][j] += 400;</span>
+<span class="fc" id="L2035">                            break;</span>
+                        case 1:
+<span class="fc" id="L2037">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L2040">                    countm = 0;</span>
+<span class="fc" id="L2041">                    county = 0;</span>
+<span class="fc" id="L2042">                    space = 0;</span>
+                }
+
+                //��б�����
+
+<span class="fc bfc" id="L2047" title="All 2 branches covered.">                for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L2048" title="All 4 branches covered.">                    if (mind[i - k][j - k] != state_color &amp;&amp; mind[i - k][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L2049" title="All 2 branches covered.">                    if (mind[i - k][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L2050" title="All 2 branches covered.">                    if (mind[i - k][j - k] == -state_color) county++;</span>
+
+                }
+
+<span class="fc bfc" id="L2054" title="All 4 branches covered.">                if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L2055">                    mind[i][j] += 0;</span>
+<span class="fc" id="L2056">                    countm = 0;</span>
+<span class="fc" id="L2057">                    county = 0;</span>
+<span class="fc" id="L2058">                    space = 0;</span>
+<span class="fc bfc" id="L2059" title="All 2 branches covered.">                } else if (space == 5) {</span>
+<span class="fc" id="L2060">                    mind[i][j] += 7;</span>
+<span class="fc" id="L2061">                    countm = 0;</span>
+<span class="fc" id="L2062">                    county = 0;</span>
+<span class="fc" id="L2063">                    space = 0;</span>
+<span class="fc bfc" id="L2064" title="All 2 branches covered.">                } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2065" title="1 of 6 branches missed.">                    switch (countm) {</span>
+                        case 5:
+<span class="nc" id="L2067">                            return 1;</span>
+                        case 4:
+<span class="fc" id="L2069">                            mind[i][j] += 800000;</span>
+<span class="fc" id="L2070">                            break;</span>
+                        case 3:
+<span class="fc" id="L2072">                            mind[i][j] += 15000;</span>
+<span class="fc" id="L2073">                            break;</span>
+                        case 2:
+<span class="fc" id="L2075">                            mind[i][j] += 800;</span>
+<span class="fc" id="L2076">                            break;</span>
+                        case 1:
+<span class="fc" id="L2078">                            mind[i][j] += 35;</span>
+
+                    }
+                    //�Է�����
+
+<span class="pc bpc" id="L2083" title="1 of 6 branches missed.">                    switch (county) {</span>
+                        case 5:
+<span class="nc" id="L2085">                            return -1;</span>
+                        case 4:
+<span class="fc" id="L2087">                            mind[i][j] += 100000;</span>
+<span class="fc" id="L2088">                            break;</span>
+                        case 3:
+<span class="fc" id="L2090">                            mind[i][j] += 1800;</span>
+<span class="fc" id="L2091">                            break;</span>
+                        case 2:
+<span class="fc" id="L2093">                            mind[i][j] += 400;</span>
+<span class="fc" id="L2094">                            break;</span>
+                        case 1:
+<span class="fc" id="L2096">                            mind[i][j] += 15;</span>
+
+                    }
+<span class="fc" id="L2099">                    countm = 0;</span>
+<span class="fc" id="L2100">                    county = 0;</span>
+<span class="fc" id="L2101">                    space = 0;</span>
+                }
+<span class="pc bpc" id="L2103" title="1 of 2 branches missed.">                if(jinshou&gt;=2)mind[i][j]=0;</span>
+<span class="fc" id="L2104">                jinshou=0;</span>
+            }
+<span class="fc" id="L2106">        return 0;</span>
+    }
+
+    public int pingjia(int[][] mind) {
+<span class="fc" id="L2110">        int countm = 0;</span>
+<span class="fc" id="L2111">        int county = 0;</span>
+<span class="fc" id="L2112">        int space = 0;</span>
+<span class="fc" id="L2113">        int jinshou=0;</span>
+<span class="fc bfc" id="L2114" title="All 2 branches covered.">        for (int i = 1; i &lt; 20; i++)</span>
+<span class="fc bfc" id="L2115" title="All 2 branches covered.">            for (int j = 1; j &lt; 20; j++) {</span>
+
+
+<span class="fc bfc" id="L2118" title="All 8 branches covered.">                if (i &gt; 4 &amp;&amp; i &lt; 15 &amp;&amp; j &gt; 4 &amp;&amp; j &lt; 15) {</span>
+<span class="fc bfc" id="L2119" title="All 4 branches covered.">                    if (mind[i][j] != state_color &amp;&amp; mind[i][j] != -state_color)</span>
+                    //������
+                    {
+<span class="fc bfc" id="L2122" title="All 2 branches covered.">                        for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L2123" title="All 4 branches covered.">                            if (mind[i][j - k] != state_color &amp;&amp; mind[i][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L2124" title="All 2 branches covered.">                            if (mind[i][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L2125" title="All 2 branches covered.">                            if (mind[i][j - k] == -state_color) county++;</span>
+
+                        }
+<span class="fc bfc" id="L2128" title="All 4 branches covered.">                        if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L2129">                            mind[i][j] += 0;</span>
+<span class="fc" id="L2130">                            countm = 0;</span>
+<span class="fc" id="L2131">                            county = 0;</span>
+<span class="fc" id="L2132">                            space = 0;</span>
+<span class="fc bfc" id="L2133" title="All 2 branches covered.">                        } else if (space == 5) {</span>
+<span class="fc" id="L2134">                            mind[i][j] += 7;</span>
+<span class="fc" id="L2135">                            countm = 0;</span>
+<span class="fc" id="L2136">                            county = 0;</span>
+<span class="fc" id="L2137">                            space = 0;</span>
+<span class="fc bfc" id="L2138" title="All 2 branches covered.">                        } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2139" title="1 of 6 branches missed.">                            switch (countm) {</span>
+                                case 5:
+<span class="nc" id="L2141">                                    return 1;</span>
+                                case 4:
+<span class="fc" id="L2143">                                    mind[i][j] += 800000;</span>
+<span class="fc" id="L2144">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2146">                                    mind[i][j] += 15000;</span>
+<span class="fc" id="L2147">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2149">                                    mind[i][j] += 800;</span>
+<span class="fc" id="L2150">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2152">                                    mind[i][j] += 35;</span>
+
+                            }
+                            //�Է�����
+
+<span class="pc bpc" id="L2157" title="1 of 6 branches missed.">                            switch (county) {</span>
+                                case 5:
+<span class="nc" id="L2159">                                    return -1;</span>
+                                case 4:
+<span class="fc" id="L2161">                                    mind[i][j] += 100000;</span>
+<span class="fc" id="L2162">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2164">                                    mind[i][j] += 1800;</span>
+<span class="fc" id="L2165">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2167">                                    mind[i][j] += 400;</span>
+<span class="fc" id="L2168">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2170">                                    mind[i][j] += 15;</span>
+
+                            }
+<span class="fc" id="L2173">                            countm = 0;</span>
+<span class="fc" id="L2174">                            county = 0;</span>
+<span class="fc" id="L2175">                            space = 0;</span>
+                        }
+                        //�ұ����
+<span class="fc bfc" id="L2178" title="All 2 branches covered.">                        for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L2179" title="All 4 branches covered.">                            if (mind[i][j + k] != state_color &amp;&amp; mind[i][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L2180" title="All 2 branches covered.">                            if (mind[i][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L2181" title="All 2 branches covered.">                            if (mind[i][j + k] == -state_color) county++;</span>
+
+                        }
+
+<span class="fc bfc" id="L2185" title="All 4 branches covered.">                        if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L2186">                            mind[i][j] += 0;</span>
+<span class="fc" id="L2187">                            countm = 0;</span>
+<span class="fc" id="L2188">                            county = 0;</span>
+<span class="fc" id="L2189">                            space = 0;</span>
+<span class="fc bfc" id="L2190" title="All 2 branches covered.">                        } else if (space == 5) {</span>
+<span class="fc" id="L2191">                            mind[i][j] += 7;</span>
+<span class="fc" id="L2192">                            countm = 0;</span>
+<span class="fc" id="L2193">                            county = 0;</span>
+<span class="fc" id="L2194">                            space = 0;</span>
+<span class="fc bfc" id="L2195" title="All 2 branches covered.">                        } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2196" title="1 of 6 branches missed.">                            switch (countm) {</span>
+                                case 5:
+<span class="nc" id="L2198">                                    return 1;</span>
+                                case 4:
+<span class="fc" id="L2200">                                    mind[i][j] += 800000;</span>
+<span class="fc" id="L2201">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2203">                                    mind[i][j] += 15000;</span>
+<span class="fc" id="L2204">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2206">                                    mind[i][j] += 800;</span>
+<span class="fc" id="L2207">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2209">                                    mind[i][j] += 35;</span>
+
+                            }
+                            //�Է�����
+
+<span class="pc bpc" id="L2214" title="1 of 6 branches missed.">                            switch (county) {</span>
+                                case 5:
+<span class="nc" id="L2216">                                    return -1;</span>
+                                case 4:
+<span class="fc" id="L2218">                                    mind[i][j] += 100000;</span>
+<span class="fc" id="L2219">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2221">                                    mind[i][j] += 1800;</span>
+<span class="fc" id="L2222">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2224">                                    mind[i][j] += 400;</span>
+<span class="fc" id="L2225">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2227">                                    mind[i][j] += 15;</span>
+
+                            }
+<span class="fc" id="L2230">                            countm = 0;</span>
+<span class="fc" id="L2231">                            county = 0;</span>
+<span class="fc" id="L2232">                            space = 0;</span>
+                        }
+                        //�����
+
+
+<span class="fc bfc" id="L2237" title="All 2 branches covered.">                        for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L2238" title="All 4 branches covered.">                            if (mind[i + k][j] != state_color &amp;&amp; mind[i + k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L2239" title="All 2 branches covered.">                            if (mind[i + k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L2240" title="All 2 branches covered.">                            if (mind[i + k][j] == -state_color) county++;</span>
+
+                        }
+
+<span class="fc bfc" id="L2244" title="All 4 branches covered.">                        if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L2245">                            mind[i][j] += 0;</span>
+<span class="fc" id="L2246">                            countm = 0;</span>
+<span class="fc" id="L2247">                            county = 0;</span>
+<span class="fc" id="L2248">                            space = 0;</span>
+<span class="fc bfc" id="L2249" title="All 2 branches covered.">                        } else if (space == 5) {</span>
+<span class="fc" id="L2250">                            mind[i][j] += 7;</span>
+<span class="fc" id="L2251">                            countm = 0;</span>
+<span class="fc" id="L2252">                            county = 0;</span>
+<span class="fc" id="L2253">                            space = 0;</span>
+<span class="fc bfc" id="L2254" title="All 2 branches covered.">                        } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2255" title="1 of 6 branches missed.">                            switch (countm) {</span>
+                                case 5:
+<span class="nc" id="L2257">                                    return 1;</span>
+                                case 4:
+<span class="fc" id="L2259">                                    mind[i][j] += 800000;</span>
+<span class="fc" id="L2260">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2262">                                    mind[i][j] += 15000;</span>
+<span class="fc" id="L2263">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2265">                                    mind[i][j] += 800;</span>
+<span class="fc" id="L2266">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2268">                                    mind[i][j] += 35;</span>
+
+                            }
+                            //�Է�����
+
+<span class="pc bpc" id="L2273" title="1 of 6 branches missed.">                            switch (county) {</span>
+                                case 5:
+<span class="nc" id="L2275">                                    return -1;</span>
+                                case 4:
+<span class="fc" id="L2277">                                    mind[i][j] += 100000;</span>
+<span class="fc" id="L2278">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2280">                                    mind[i][j] += 1800;</span>
+<span class="fc" id="L2281">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2283">                                    mind[i][j] += 400;</span>
+<span class="fc" id="L2284">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2286">                                    mind[i][j] += 15;</span>
+
+                            }
+<span class="fc" id="L2289">                            countm = 0;</span>
+<span class="fc" id="L2290">                            county = 0;</span>
+<span class="fc" id="L2291">                            space = 0;</span>
+                        }
+
+                        //�����
+
+<span class="fc bfc" id="L2296" title="All 2 branches covered.">                        for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L2297" title="All 4 branches covered.">                            if (mind[i - k][j] != state_color &amp;&amp; mind[i - k][j] != -state_color) space++;</span>
+<span class="fc bfc" id="L2298" title="All 2 branches covered.">                            if (mind[i - k][j] == state_color) countm++;</span>
+<span class="fc bfc" id="L2299" title="All 2 branches covered.">                            if (mind[i - k][j] == -state_color) county++;</span>
+
+                        }
+
+<span class="fc bfc" id="L2303" title="All 4 branches covered.">                        if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L2304">                            mind[i][j] += 0;</span>
+<span class="fc" id="L2305">                            countm = 0;</span>
+<span class="fc" id="L2306">                            county = 0;</span>
+<span class="fc" id="L2307">                            space = 0;</span>
+<span class="fc bfc" id="L2308" title="All 2 branches covered.">                        } else if (space == 5) {</span>
+<span class="fc" id="L2309">                            mind[i][j] += 7;</span>
+<span class="fc" id="L2310">                            countm = 0;</span>
+<span class="fc" id="L2311">                            county = 0;</span>
+<span class="fc" id="L2312">                            space = 0;</span>
+<span class="fc bfc" id="L2313" title="All 2 branches covered.">                        } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2314" title="1 of 6 branches missed.">                            switch (countm) {</span>
+                                case 5:
+<span class="nc" id="L2316">                                    return 1;</span>
+                                case 4:
+<span class="fc" id="L2318">                                    mind[i][j] += 800000;</span>
+<span class="fc" id="L2319">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2321">                                    mind[i][j] += 15000;</span>
+<span class="fc" id="L2322">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2324">                                    mind[i][j] += 800;</span>
+<span class="fc" id="L2325">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2327">                                    mind[i][j] += 35;</span>
+
+                            }
+                            //�Է�����
+
+<span class="pc bpc" id="L2332" title="1 of 6 branches missed.">                            switch (county) {</span>
+                                case 5:
+<span class="nc" id="L2334">                                    return -1;</span>
+                                case 4:
+<span class="fc" id="L2336">                                    mind[i][j] += 100000;</span>
+<span class="fc" id="L2337">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2339">                                    mind[i][j] += 1800;</span>
+<span class="fc" id="L2340">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2342">                                    mind[i][j] += 400;</span>
+<span class="fc" id="L2343">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2345">                                    mind[i][j] += 15;</span>
+
+                            }
+<span class="fc" id="L2348">                            countm = 0;</span>
+<span class="fc" id="L2349">                            county = 0;</span>
+<span class="fc" id="L2350">                            space = 0;</span>
+                        }
+
+
+                        //��б�����
+
+<span class="fc bfc" id="L2356" title="All 2 branches covered.">                        for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L2357" title="All 4 branches covered.">                            if (mind[i + k][j - k] != state_color &amp;&amp; mind[i + k][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L2358" title="All 2 branches covered.">                            if (mind[i + k][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L2359" title="All 2 branches covered.">                            if (mind[i + k][j - k] == -state_color) county++;</span>
+
+                        }
+
+<span class="fc bfc" id="L2363" title="All 4 branches covered.">                        if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L2364">                            mind[i][j] += 0;</span>
+<span class="fc" id="L2365">                            countm = 0;</span>
+<span class="fc" id="L2366">                            county = 0;</span>
+<span class="fc" id="L2367">                            space = 0;</span>
+<span class="fc bfc" id="L2368" title="All 2 branches covered.">                        } else if (space == 5) {</span>
+<span class="fc" id="L2369">                            mind[i][j] += 7;</span>
+<span class="fc" id="L2370">                            countm = 0;</span>
+<span class="fc" id="L2371">                            county = 0;</span>
+<span class="fc" id="L2372">                            space = 0;</span>
+<span class="fc bfc" id="L2373" title="All 2 branches covered.">                        } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2374" title="1 of 6 branches missed.">                            switch (countm) {</span>
+                                case 5:
+<span class="nc" id="L2376">                                    return 1;</span>
+                                case 4:
+<span class="fc" id="L2378">                                    mind[i][j] += 800000;</span>
+<span class="fc" id="L2379">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2381">                                    mind[i][j] += 15000;</span>
+<span class="fc" id="L2382">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2384">                                    mind[i][j] += 800;</span>
+<span class="fc" id="L2385">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2387">                                    mind[i][j] += 35;</span>
+
+                            }
+                            //�Է�����
+
+<span class="pc bpc" id="L2392" title="1 of 6 branches missed.">                            switch (county) {</span>
+                                case 5:
+<span class="nc" id="L2394">                                    return -1;</span>
+                                case 4:
+<span class="fc" id="L2396">                                    mind[i][j] += 100000;</span>
+<span class="fc" id="L2397">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2399">                                    mind[i][j] += 1800;</span>
+<span class="fc" id="L2400">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2402">                                    mind[i][j] += 400;</span>
+<span class="fc" id="L2403">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2405">                                    mind[i][j] += 15;</span>
+
+                            }
+<span class="fc" id="L2408">                            countm = 0;</span>
+<span class="fc" id="L2409">                            county = 0;</span>
+<span class="fc" id="L2410">                            space = 0;</span>
+                        }
+
+                        //��б�����
+
+<span class="fc bfc" id="L2415" title="All 2 branches covered.">                        for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L2416" title="All 4 branches covered.">                            if (mind[i - k][j - k] != state_color &amp;&amp; mind[i - k][j - k] != -state_color) space++;</span>
+<span class="fc bfc" id="L2417" title="All 2 branches covered.">                            if (mind[i - k][j - k] == state_color) countm++;</span>
+<span class="fc bfc" id="L2418" title="All 2 branches covered.">                            if (mind[i - k][j - k] == -state_color) county++;</span>
+
+                        }
+
+<span class="fc bfc" id="L2422" title="All 4 branches covered.">                        if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L2423">                            mind[i][j] += 0;</span>
+<span class="fc" id="L2424">                            countm = 0;</span>
+<span class="fc" id="L2425">                            county = 0;</span>
+<span class="fc" id="L2426">                            space = 0;</span>
+<span class="fc bfc" id="L2427" title="All 2 branches covered.">                        } else if (space == 5) {</span>
+<span class="fc" id="L2428">                            mind[i][j] += 7;</span>
+<span class="fc" id="L2429">                            countm = 0;</span>
+<span class="fc" id="L2430">                            county = 0;</span>
+<span class="fc" id="L2431">                            space = 0;</span>
+<span class="fc bfc" id="L2432" title="All 2 branches covered.">                        } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2433" title="1 of 6 branches missed.">                            switch (countm) {</span>
+                                case 5:
+<span class="nc" id="L2435">                                    return 1;</span>
+                                case 4:
+<span class="fc" id="L2437">                                    mind[i][j] += 800000;</span>
+<span class="fc" id="L2438">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2440">                                    mind[i][j] += 15000;</span>
+<span class="fc" id="L2441">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2443">                                    mind[i][j] += 800;</span>
+<span class="fc" id="L2444">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2446">                                    mind[i][j] += 35;</span>
+
+                            }
+                            //�Է�����
+
+<span class="pc bpc" id="L2451" title="1 of 6 branches missed.">                            switch (county) {</span>
+                                case 5:
+<span class="nc" id="L2453">                                    return -1;</span>
+                                case 4:
+<span class="fc" id="L2455">                                    mind[i][j] += 100000;</span>
+<span class="fc" id="L2456">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2458">                                    mind[i][j] += 1800;</span>
+<span class="fc" id="L2459">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2461">                                    mind[i][j] += 400;</span>
+<span class="fc" id="L2462">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2464">                                    mind[i][j] += 15;</span>
+
+                            }
+<span class="fc" id="L2467">                            countm = 0;</span>
+<span class="fc" id="L2468">                            county = 0;</span>
+<span class="fc" id="L2469">                            space = 0;</span>
+                        }
+                        //�������
+
+<span class="fc bfc" id="L2473" title="All 2 branches covered.">                        for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L2474" title="All 4 branches covered.">                            if (mind[i + k][j + k] != state_color &amp;&amp; mind[i + k][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L2475" title="All 2 branches covered.">                            if (mind[i + k][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L2476" title="All 2 branches covered.">                            if (mind[i + k][j + k] == -state_color) county++;</span>
+
+                        }
+
+<span class="fc bfc" id="L2480" title="All 4 branches covered.">                        if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L2481">                            mind[i][j] += 0;</span>
+<span class="fc" id="L2482">                            countm = 0;</span>
+<span class="fc" id="L2483">                            county = 0;</span>
+<span class="fc" id="L2484">                            space = 0;</span>
+<span class="fc bfc" id="L2485" title="All 2 branches covered.">                        } else if (space == 5) {</span>
+<span class="fc" id="L2486">                            mind[i][j] += 7;</span>
+<span class="fc" id="L2487">                            countm = 0;</span>
+<span class="fc" id="L2488">                            county = 0;</span>
+<span class="fc" id="L2489">                            space = 0;</span>
+<span class="fc bfc" id="L2490" title="All 2 branches covered.">                        } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2491" title="1 of 6 branches missed.">                            switch (countm) {</span>
+                                case 5:
+<span class="nc" id="L2493">                                    return 1;</span>
+                                case 4:
+<span class="fc" id="L2495">                                    mind[i][j] += 800000;</span>
+<span class="fc" id="L2496">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2498">                                    mind[i][j] += 15000;</span>
+<span class="fc" id="L2499">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2501">                                    mind[i][j] += 800;</span>
+<span class="fc" id="L2502">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2504">                                    mind[i][j] += 35;</span>
+
+                            }
+                            //�Է�����
+
+<span class="pc bpc" id="L2509" title="1 of 6 branches missed.">                            switch (county) {</span>
+                                case 5:
+<span class="nc" id="L2511">                                    return -1;</span>
+                                case 4:
+<span class="fc" id="L2513">                                    mind[i][j] += 100000;</span>
+<span class="fc" id="L2514">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2516">                                    mind[i][j] += 1800;</span>
+<span class="fc" id="L2517">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2519">                                    mind[i][j] += 400;</span>
+<span class="fc" id="L2520">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2522">                                    mind[i][j] += 15;</span>
+
+                            }
+<span class="fc" id="L2525">                            countm = 0;</span>
+<span class="fc" id="L2526">                            county = 0;</span>
+<span class="fc" id="L2527">                            space = 0;</span>
+                        }
+                        //����
+<span class="fc bfc" id="L2530" title="All 2 branches covered.">                        for (int k = 0; k &lt; 5; k++) {</span>
+<span class="fc bfc" id="L2531" title="All 4 branches covered.">                            if (mind[i - k][j + k] != state_color &amp;&amp; mind[i - k][j + k] != -state_color) space++;</span>
+<span class="fc bfc" id="L2532" title="All 2 branches covered.">                            if (mind[i - k][j + k] == state_color) countm++;</span>
+<span class="fc bfc" id="L2533" title="All 2 branches covered.">                            if (mind[i - k][j + k] == -state_color) county++;</span>
+
+                        }
+
+<span class="fc bfc" id="L2537" title="All 4 branches covered.">                        if (countm &gt; 0 &amp;&amp; county &gt; 0) {</span>
+<span class="fc" id="L2538">                            mind[i][j] += 0;</span>
+<span class="fc" id="L2539">                            countm = 0;</span>
+<span class="fc" id="L2540">                            county = 0;</span>
+<span class="fc" id="L2541">                            space = 0;</span>
+<span class="fc bfc" id="L2542" title="All 2 branches covered.">                        } else if (space == 5) {</span>
+<span class="fc" id="L2543">                            mind[i][j] += 7;</span>
+<span class="fc" id="L2544">                            countm = 0;</span>
+<span class="fc" id="L2545">                            county = 0;</span>
+<span class="fc" id="L2546">                            space = 0;</span>
+<span class="fc bfc" id="L2547" title="All 2 branches covered.">                        } else {if(countm&gt;=2)jinshou+=1;</span>
+<span class="pc bpc" id="L2548" title="1 of 6 branches missed.">                            switch (countm) {</span>
+                                case 5:
+<span class="nc" id="L2550">                                    return 1;</span>
+                                case 4:
+<span class="fc" id="L2552">                                    mind[i][j] += 800000;</span>
+<span class="fc" id="L2553">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2555">                                    mind[i][j] += 15000;</span>
+<span class="fc" id="L2556">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2558">                                    mind[i][j] += 800;</span>
+<span class="fc" id="L2559">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2561">                                    mind[i][j] += 35;</span>
+
+                            }
+                            //�Է�����
+
+<span class="pc bpc" id="L2566" title="1 of 6 branches missed.">                            switch (county) {</span>
+                                case 5:
+<span class="nc" id="L2568">                                    return -1;</span>
+                                case 4:
+<span class="fc" id="L2570">                                    mind[i][j] += 100000;</span>
+<span class="fc" id="L2571">                                    break;</span>
+                                case 3:
+<span class="fc" id="L2573">                                    mind[i][j] += 1800;</span>
+<span class="fc" id="L2574">                                    break;</span>
+                                case 2:
+<span class="fc" id="L2576">                                    mind[i][j] += 400;</span>
+<span class="fc" id="L2577">                                    break;</span>
+                                case 1:
+<span class="fc" id="L2579">                                    mind[i][j] += 15;</span>
+
+                            }
+<span class="fc" id="L2582">                            countm = 0;</span>
+<span class="fc" id="L2583">                            county = 0;</span>
+<span class="fc" id="L2584">                            space = 0;</span>
+                        }
+                    }
+<span class="pc bpc" id="L2587" title="1 of 2 branches missed.">                    if(jinshou&gt;=2)mind[i][j]=0;</span>
+<span class="fc" id="L2588">                    jinshou=0;</span>
+                }
+            }
+<span class="fc" id="L2591">        return 0;</span>
+
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

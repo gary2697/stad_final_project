@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="56eb9d32-77c9-4ec6-b0a0-62a89739a829" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/BoradFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/BoradFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectService$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectService$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectService$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectService$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectedError$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectedError$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectedError$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectedError$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectedError.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/ConnectedError.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WaitClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WelcomeFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WelcomeFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WelcomeFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WelcomeFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WelcomeFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WelcomeFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WelcomeFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/frames/WelcomeFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/BackPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/BackPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/ImageButton$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/ImageButton$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/ImageButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/ImageButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/SelectButton$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/SelectButton$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/SelectButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/override_view/SelectButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/BoradPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/BoradPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/BoradPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/BoradPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/BoradPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/BoradPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/PlayerPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/PlayerPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/PlayerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/panels/PlayerPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/socket/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/socket/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/socket/PlayerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/socket/PlayerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/brioal/socket/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/brioal/socket/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/BlackBoxCalculateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/BlackBoxCalculateTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/BlackBoxPointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/BlackBoxPointTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ServerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ServerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ServerTest2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/calculateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/calculateTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/pointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/pointTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/tests/CalculatePitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/tests/CalculatePitTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jacoco/test.exec" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacoco/test.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ServerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ServerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/frames/BoradFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/frames/BoradFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/frames/ConnectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/frames/ConnectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/frames/ConnectedError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/frames/ConnectedError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/frames/WaitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/frames/WaitClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/frames/WelcomeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/frames/WelcomeFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/interfaces/Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/interfaces/Call.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/interfaces/DiyViews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/interfaces/DiyViews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/override_view/BackPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/override_view/BackPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/override_view/BlankButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/override_view/BlankButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/override_view/BlankPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/override_view/BlankPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/override_view/ImageButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/override_view/ImageButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/override_view/SelectButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/override_view/SelectButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/panels/BoradPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/panels/BoradPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/panels/PlayerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/panels/PlayerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/panels/ScorePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/panels/ScorePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/socket/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/socket/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/socket/PlayerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/socket/PlayerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/brioal/socket/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/brioal/socket/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/frames/BoradFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/frames/BoradFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/frames/ConnectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/frames/ConnectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/frames/ConnectedError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/frames/ConnectedError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/frames/WaitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/frames/WaitClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/frames/WelcomeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/frames/WelcomeFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/interfaces/Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/interfaces/Call.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/interfaces/DiyViews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/interfaces/DiyViews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/BackPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/BackPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/BlankButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/BlankButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/BlankPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/BlankPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/ImageButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/ImageButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/SelectButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/override_view/SelectButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/panels/BoradPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/panels/BoradPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/panels/PlayerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/panels/PlayerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/panels/ScorePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/panels/ScorePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/socket/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/socket/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/socket/PlayerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/socket/PlayerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/socket/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/socket/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brioal/utool/Calculate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brioal/utool/Calculate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BlackBoxCalculateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BlackBoxCalculateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BlackBoxPointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BlackBoxPointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/calculateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/calculateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CalculatePitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CalculatePitTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="STAD_testwuzihqi" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="STAD_testwuzihqi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="STAD_testwuzihqi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="STAD_testwuzihqi" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="STAD_testwuzihqi" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="281PWiqI2Y0u6DbbYZnjk0mbtko" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RunManager" selected="Gradle.testWelcomeFrame">
+    <configuration name="testBoardFrame (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;testBoardFrame&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="testConnectService" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;testConnectService&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="testSelectButton" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;testSelectButton&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="testWaitClient" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;testWaitClient&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="testWelcomeFrame" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;testWelcomeFrame&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.testBoardFrame (1)" />
+      <item itemvalue="Gradle.testConnectService" />
+      <item itemvalue="Gradle.testSelectButton" />
+      <item itemvalue="Gradle.testWaitClient" />
+      <item itemvalue="Gradle.testWelcomeFrame" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.testWelcomeFrame" />
+        <item itemvalue="Gradle.testWaitClient" />
+        <item itemvalue="Gradle.testSelectButton" />
+        <item itemvalue="Gradle.testConnectService" />
+        <item itemvalue="Gradle.testBoardFrame (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56eb9d32-77c9-4ec6-b0a0-62a89739a829" name="Changes" comment="" />
+      <created>1650381151804</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650381151804</updated>
+      <workItem from="1650381154622" duration="2944000" />
+      <workItem from="1650514779953" duration="259000" />
+      <workItem from="1650515043029" duration="112000" />
+      <workItem from="1650515188243" duration="43000" />
+      <workItem from="1650515276370" duration="674000" />
+      <workItem from="1650515968182" duration="2071000" />
+      <workItem from="1650518695451" duration="54107000" />
+      <workItem from="1650827093489" duration="965000" />
+      <workItem from="1650828079549" duration="21953000" />
+      <workItem from="1650987872105" duration="12188000" />
+      <workItem from="1651194943245" duration="8328000" />
+      <workItem from="1651204381634" duration="6079000" />
+      <workItem from="1651284292181" duration="78000" />
+      <workItem from="1651284409704" duration="759000" />
+      <workItem from="1651285490476" duration="1220000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

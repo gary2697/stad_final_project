@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlayerClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.socket</a> &gt; <span class="el_source">PlayerClient.java</span></div><h1>PlayerClient.java</h1><pre class="source lang-java linenums">package com.brioal.socket;
+
+import com.brioal.interfaces.Call;
+import com.brioal.panels.BoradPanel;
+import com.brioal.panels.PlayerPanel;
+import com.brioal.utool.Point;
+
+import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+
+/**
+ * Created by null on 15-11-6.
+ * 客户端程序，用于已客户端的方式接受与发送数据，
+ * 接收传入的数据， host地址， 端口号， BoradPanel对象
+ * 在以客户端形式启动的时候启动，其中的Get方法要以新建线程的方式来启动
+ */
+public class PlayerClient implements Call {
+<span class="nc" id="L22">    private Socket socket = null;   //Socket套接字对象</span>
+    private PlayerPanel panel;       //棋盘的引用对象，用于调用addPoint方法
+    private int state_color; // 用于存放已方所选棋子颜色
+
+<span class="nc" id="L26">    public PlayerClient(String host, int port, PlayerPanel panel, int state_color) { // 新建客户端程序要传入三个数据，host地址，端口号，棋盘对象</span>
+<span class="nc" id="L27">        this.panel = panel;</span>
+<span class="nc" id="L28">        this.state_color = state_color;</span>
+        try {
+<span class="nc" id="L30">            socket = new Socket(host, port);</span>
+<span class="nc" id="L31">        } catch (IOException e) {</span>
+<span class="nc" id="L32">            e.printStackTrace();</span>
+<span class="nc" id="L33">        }</span>
+<span class="nc" id="L34">    }</span>
+
+    //发送数据到输入流
+    public void Send(String s) {
+<span class="nc" id="L38">        PrintWriter writer = null;</span>
+        try {
+<span class="nc" id="L40">            writer = new PrintWriter(socket.getOutputStream()); //获取输出流对象</span>
+<span class="nc" id="L41">        } catch (IOException e) {</span>
+<span class="nc" id="L42">            e.printStackTrace();</span>
+<span class="nc" id="L43">        }</span>
+<span class="nc" id="L44">        writer.println(s); // 数据写入到输出流</span>
+<span class="nc" id="L45">        writer.flush(); // 刷新输入流</span>
+<span class="nc" id="L46">    }</span>
+
+    //关闭连接的方法
+    public void Close() {
+        try {
+<span class="nc" id="L51">            socket.close();</span>
+<span class="nc" id="L52">        } catch (IOException e) {</span>
+<span class="nc" id="L53">            e.printStackTrace();</span>
+<span class="nc" id="L54">        }</span>
+<span class="nc" id="L55">    }</span>
+
+    //    传出数据 ， 在BoradPanel中调用，传出x+&quot;,&quot;+y的字符串
+    @Override
+    public void Put(String s) {
+//        System.out.println(&quot;Clent_Put&quot; + s);
+<span class="nc" id="L61">        Send(s); // 调用发送数据的方法</span>
+<span class="nc" id="L62">    }</span>
+
+    //获取到数据，并且调用BoradPanel的addPoint方法添加穿进来的点
+    @Override
+    public void Get() {
+<span class="nc" id="L67">        BufferedReader reader = null; // 获取读入对象</span>
+        try {
+<span class="nc" id="L69">            reader = new BufferedReader(new InputStreamReader(socket.getInputStream())); // 获取输入流</span>
+<span class="nc" id="L70">        } catch (IOException e) {</span>
+<span class="nc" id="L71">            e.printStackTrace();</span>
+<span class="nc" id="L72">        }</span>
+        while (true) {
+<span class="nc" id="L74">            String str = null;</span>
+            try {
+<span class="nc" id="L76">                str = reader.readLine(); //读取内容</span>
+<span class="nc" id="L77">            } catch (IOException e) {</span>
+<span class="nc" id="L78">                e.printStackTrace();</span>
+<span class="nc" id="L79">            }</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">            if (str != null) {</span>
+//                System.out.println(&quot;Client Get Messgae&quot; + str);
+<span class="nc" id="L82">                String[] data = str.split(&quot;,&quot;);</span>
+<span class="nc" id="L83">                System.out.println(&quot;PlayClient收到&quot;+str);</span>
+<span class="nc" id="L84">                int x = Integer.valueOf(data[0]);</span>
+<span class="nc" id="L85">                int y = Integer.valueOf(data[1]);</span>
+
+<span class="nc" id="L87">                Point point = null;</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">                if (state_color == 1) {</span>
+                    //以方用的黑子，则传入的为白子
+<span class="nc" id="L90">                    point = new Point(x, y, Point.STATE_WHITE);</span>
+                } else {
+<span class="nc" id="L92">                    point = new Point(x, y, Point.STATE_BLACK);</span>
+                }
+<span class="nc" id="L94">                panel.receivePoint(point); //添加棋子到棋盘</span>
+<span class="nc" id="L95">                System.out.println(&quot;Client get&quot;+point.getX()+&quot;:&quot;+point.getY());</span>
+            }
+
+<span class="nc" id="L98">        }</span>
+
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

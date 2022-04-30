@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Server.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">STAD_testwuzihqi</a> &gt; <a href="index.source.html" class="el_package">com.brioal.socket</a> &gt; <span class="el_source">Server.java</span></div><h1>Server.java</h1><pre class="source lang-java linenums">package com.brioal.socket;
+
+
+import com.brioal.frames.BoradFrame;
+import com.brioal.utool.Point;
+import com.brioal.interfaces.Call;
+import com.brioal.panels.BoradPanel;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+/*
+* 服务器程序，用于已服务器的方式接受与发送数据，
+ * 接收传入的数据，  端口号， BoradPanel对象
+ * 在以客户端形式启动的时候启动，其中的Get方法要以新建线程的方式来启动
+*/
+public class Server implements Call {
+    private BoradPanel panel;  // Get方法中用于添加棋子的BoradPanel对象
+    ServerSocket serverSocket; // 新建服务器对象
+<span class="nc" id="L24">    private Socket socket = null;</span>
+    private int state_color ; // 用于存放已方所选棋子颜色
+
+<span class="nc" id="L27">    public Server(int port, BoradPanel panel ,  int state_color) {</span>
+<span class="nc" id="L28">        this.panel = panel;</span>
+<span class="nc" id="L29">        this.state_color = state_color;</span>
+        try {
+<span class="nc" id="L31">            serverSocket = new ServerSocket(port); //根据端口号创建对象</span>
+<span class="nc" id="L32">            socket = serverSocket.accept(); // 在没有客户端连接之前会一直阻塞，此处会在一个加载动画中来进行等待</span>
+<span class="nc" id="L33">        } catch (IOException e) {</span>
+<span class="nc" id="L34">            e.printStackTrace();</span>
+<span class="nc" id="L35">        }</span>
+<span class="nc" id="L36">    }</span>
+
+    //向输入流中发送数据
+    public void Send(String s) {
+<span class="nc" id="L40">        PrintWriter writer = null;</span>
+        try {
+<span class="nc" id="L42">            writer = new PrintWriter(socket.getOutputStream()); //获取到输出流</span>
+<span class="nc" id="L43">        } catch (IOException e) {</span>
+<span class="nc" id="L44">            e.printStackTrace();</span>
+<span class="nc" id="L45">        }</span>
+<span class="nc" id="L46">        writer.println(s); // 写入数据</span>
+<span class="nc" id="L47">        writer.flush(); // 刷新输出流</span>
+<span class="nc" id="L48">    }</span>
+
+    //关闭连接
+    public void Close() {
+        try {
+<span class="nc" id="L53">            socket.close();</span>
+<span class="nc" id="L54">        } catch (IOException e) {</span>
+<span class="nc" id="L55">            e.printStackTrace();</span>
+<span class="nc" id="L56">        }</span>
+<span class="nc" id="L57">    }</span>
+
+    public void addFirstPoint() {
+<span class="nc" id="L60">        Put(&quot;10,10&quot;);</span>
+<span class="nc" id="L61">        panel.JustAdd();</span>
+<span class="nc" id="L62">    }</span>
+    //Put方法，用与发送数据，供BoradPanel来调用
+    @Override
+    public void Put(String s) {
+//        System.out.println(&quot;Service Put&quot; + s);
+<span class="nc" id="L67">        Send(s);</span>
+<span class="nc" id="L68">    }</span>
+
+    //Get方法，此方法会阻塞线程，所以在创建服务器对象之后，要通过线程的方式来使用此方法
+    //此方法会一直执行，获取传进的数据，并使用BoradPanel引用来添加点到面板
+    @Override
+    public void Get() {
+        try {
+            //获取输入流
+<span class="nc" id="L76">            BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));</span>
+            while (true) {
+<span class="nc" id="L78">                String str = null;</span>
+                try {
+<span class="nc" id="L80">                    str = reader.readLine(); // 读取内容</span>
+//                    System.out.println(str);
+<span class="nc" id="L82">                } catch (IOException e) {</span>
+<span class="nc" id="L83">                    e.printStackTrace();</span>
+<span class="nc" id="L84">                }</span>
+<span class="nc" id="L85">                String[] data = str.split(&quot;,&quot;); //分割内容</span>
+<span class="nc" id="L86">                int x = Integer.valueOf(data[0]);</span>
+<span class="nc" id="L87">                int y = Integer.valueOf(data[1]);</span>
+<span class="nc" id="L88">                Point point = null;</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">                if (state_color == BoradFrame.STATE_BLACK) { // 如果我方为黑子。 则穿进来的子为白子</span>
+<span class="nc" id="L90">                    point = new Point(x, y, Point.STATE_WHITE) ;</span>
+<span class="nc" id="L91">                    System.out.println(&quot;Service get White&quot;);</span>
+                } else {
+<span class="nc" id="L93">                    point = new Point(x, y, Point.STATE_BLACK);</span>
+<span class="nc" id="L94">                    System.out.println(&quot;Service get Blank&quot;);</span>
+
+                }
+<span class="nc" id="L97">                panel.addPoint(point);</span>
+<span class="nc" id="L98">            }</span>
+<span class="nc" id="L99">        } catch (IOException e) {</span>
+<span class="nc" id="L100">            e.printStackTrace();</span>
+        }
+<span class="nc" id="L102">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
